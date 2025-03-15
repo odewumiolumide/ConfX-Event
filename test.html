@@ -1420,6 +1420,360 @@ chekout failed
     </div>
 </div>
 
+for sigin js 
+
+<script>
+    document.getElementById('signinForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Retrieve stored email and password from local storage
+        const storedEmail = localStorage.getItem('email');
+        const storedPassword = localStorage.getItem('password');
+
+        // Check if the entered email and password match the stored values
+        if (email === storedEmail && password === storedPassword) {
+            alert('You have sucessfully login into your account');
+            
+            window.location.href = '/Dashboard/dashboard/index5.html'; // Redirect to dashboard
+        } else {
+            alert('Invalid email or password. Please try again.');
+        }
+    });
+
+    // ================== Password Show Hide Functionality ==========
+    function initializePasswordToggle(toggleSelector) {
+        $(toggleSelector).on('click', function() {
+            $(this).toggleClass("ri-eye-off-line");
+            const input = $($(this).attr("data-toggle"));
+            if (input.attr("type") === "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    }
+
+    sigin 
+
+    <script>
+        // Configure AWS Cognito
+        AWS.config.region = 'YOUR_AWS_REGION'; // e.g., 'us-east-1'
+        const poolData = {
+            UserPoolId: 'YOUR_USER_POOL_ID', // Your User Pool ID here
+            ClientId: 'YOUR_APP_CLIENT_ID', // Your App Client ID here
+        };
+        const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+
+        // Configure DynamoDB
+        AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+            IdentityPoolId: 'YOUR_IDENTITY_POOL_ID', // Your Identity Pool ID here
+        });
+        const docClient = new AWS.DynamoDB.DocumentClient();
+
+        // Signup form submission
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const attributeList = [
+                new AmazonCognitoIdentity.CognitoUserAttribute({
+                    Name: 'email',
+                    Value: email,
+                }),
+            ];
+
+            userPool.signUp(username, password, attributeList, null, function (err, result) {
+                if (err) {
+                    alert(err.message || JSON.stringify(err));
+                    return;
+                }
+
+                // Save user data to DynamoDB
+                const params = {
+                    TableName: 'Users', // Your DynamoDB table name
+                    Item: {
+                        username: username,
+                        email: email,
+                        // Add any other attributes you want to store
+                    }
+                };
+
+                docClient.put(params, function(err) {
+                    if (err) {
+                        alert("Unable to add user to DynamoDB. Error JSON:" + JSON.stringify(err));
+                    } else {
+                        alert('Signup successful! Please check your email for verification.');
+                        window.location.href = 'otp-code-verification.html'; // Redirect to OTP verification page
+                    }
+                });
+            });
+        });
+
+        // Password toggle functionality
+        function initializePasswordToggle(toggleSelector) {
+            $(toggleSelector).on('click', function () {
+                $(this).toggleClass("ri-eye-off-line");
+                const input = $($(this).attr("data-toggle"));
+                if (input.attr("type") === "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+        }
+
+        // Call the function
+        initializePasswordToggle('.toggle-password');
+    </script>
+
+
+    old 
+
+const express = require('express');
+const session = require('express-session');
+const { Issuer, generators } = require('openid-client');
+const app = express();
+
+let client;
+
+// Initialize OpenID Client
+async function initializeClient() {
+    const issuer = await Issuer.discover('https://cognito-idp.us-east-1.amazonaws.com/us-east-1_ubPhXOxDi');
+    client = new issuer.Client({
+        client_id: '6jecsaada8vulttlg0am2mntc0', // Replace with your Client ID
+        client_secret: 'j13umhhup7r3isntn3881rfnfuo3tm29p0o6o1s0nh6fh0573gf', // Replace with your Client Secret
+        redirect_uris: ['https://conf-x-event.vercel.app/'], // Your callback URL
+        response_types: ['code']
+    });
+}
+initializeClient().catch(console.error);
+
+// Configure session middleware
+app.use(session({
+    secret: 'some secret',
+    resave: false,
+    saveUninitialized: false
+}));
+
+// Authentication check middleware
+const checkAuth = (req, res, next) => {
+    req.isAuthenticated = !!req.session.userInfo;
+    next();
+};
+
+// Home route
+app.get('/', checkAuth, (req, res) => {
+    res.render('home', {
+        isAuthenticated: req.isAuthenticated,
+        userInfo: req.session.userInfo
+    });
+});
+
+// Login route
+app.get('/login', (req, res) => {
+    const nonce = generators.nonce();
+    const state = generators.state();
+    req.session.nonce = nonce;
+    req.session.state = state;
+
+    const authUrl = client.authorizationUrl({
+        scope: 'phone openid email',
+        state: state,
+        nonce: nonce,
+    });
+
+    res.redirect(authUrl);
+});
+
+// Callback route
+app.get('/', async (req, res) => {
+    try {
+        const params = client.callbackParams(req);
+        const tokenSet = await client.callback(
+            'https://conf-x-event.vercel.app/',
+            params,
+            {
+                nonce: req.session.nonce,
+                state: req.session.state
+            }
+        );
+
+        const userInfo = await client.userinfo(tokenSet.access_token);
+        req.session.userInfo = userInfo;
+
+        res.redirect('/');
+    } catch (err) {
+        console.error('Callback error:', err);
+        res.redirect('/');
+    }
+});
+
+// Logout route
+app.get('/logout', (req, res) => {
+    req.session.destroy();
+    const logoutUrl = `https://YOUR_USER_POOL_DOMAIN/logout?client_id=YOUR_CLIENT_ID&logout_uri=https://conf-x-event.vercel.app/`;
+    res.redirect(logoutUrl);
+});
+
+// Set view engine
+app.set('view engine', 'ejs');
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+
+new 
+
+const express = require('express');
+const session = require('express-session');
+const { Issuer } = require('openid-client');
+const app = express();
+const { CognitoIdentityProviderClient, InitiateAuthCommand, SignUpCommand } = require('@aws-sdk/client-cognito-identity-provider');
+
+// Middleware to parse request bodies
+app.use(express.urlencoded({ extended: true }));
+
+// Initialize OpenID Client
+let client;
+async function initializeClient() {
+    const issuer = await Issuer.discover('https://cognito-idp.us-east-1.amazonaws.com/us-east-1_ubPhXOxDi');
+    client = new issuer.Client({
+        client_id: '6jecsaada8vulttlg0am2mntc0', // Replace with your Client ID
+        client_secret: 'j13umhhup7r3isntn3881rfnfuo3tm29p0o6o1s0nh6fh0573gf', // Replace with your Client Secret
+        redirect_uris: ['https://conf-x-event.vercel.app/'], // Your callback URL
+        response_types: ['code']
+    });
+}
+initializeClient().catch(console.error);
+
+// Configure session middleware
+app.use(session({
+    secret: 'your_secure_secret', // Use a strong secret in production
+    resave: false,
+    saveUninitialized: false
+}));
+
+// Set view engine
+app.set('view engine', 'ejs');
+
+// Authentication check middleware
+const checkAuth = (req, res, next) => {
+    req.isAuthenticated = !!req.session.userInfo;
+    next();
+};
+
+// Home route
+app.get('/', checkAuth, (req, res) => {
+    res.render('home', {
+        isAuthenticated: req.isAuthenticated,
+        userInfo: req.session.userInfo
+    });
+});
+
+// Sign-in route
+app.get('/signin', (req, res) => {
+    res.render('signin'); // Render signin.ejs
+});
+
+// Sign-up route
+app.get('/signup', (req, res) => {
+    res.render('signup'); // Render signup.ejs
+});
+
+// Login form submission
+app.post('/sigup', async (req, res) => {
+    const { email, password } = req.body;
+
+    const client = new CognitoIdentityProviderClient({ region: 'us-east-1' }); // Replace with your AWS region
+    const command = new InitiateAuthCommand({
+        AuthFlow: 'USER_PASSWORD_AUTH',
+        ClientId: '6jecsaada8vulttlg0am2mntc0', // Replace with your Client ID
+        AuthParameters: {
+            USERNAME: email,
+            PASSWORD: password,
+        },
+    });
+
+    try {
+        const response = await client.send(command);
+        req.session.userInfo = response; // Save user info in session
+        res.redirect('/home'); // Redirect to home
+    } catch (err) {
+        console.error('Login error:', err);
+        res.redirect('/signin'); // Redirect back to sign-in page on error
+    }
+});
+
+// Sign-up form submission
+app.post('/signup', async (req, res) => {
+    const { username, email, password } = req.body;
+
+    const client = new CognitoIdentityProviderClient({ region: 'us-east-1' }); // Replace with your AWS region
+    const command = new SignUpCommand({
+        ClientId: '6jecsaada8vulttlg0am2mntc0', // Replace with your Client ID
+        Username: username,
+        Password: password,
+        UserAttributes: [{ Name: 'email', Value: email }]
+    });
+
+    try {
+        await client.send(command);
+        res.redirect('/signin'); // Redirect to sign-in after successful sign-up
+    } catch (err) {
+        console.error('Sign-up error:', err);
+        res.redirect('/signup'); // Redirect back to sign-up page on error
+    }
+});
+
+// Callback route
+app.get('/callback', async (req, res) => {
+    try {
+        const params = client.callbackParams(req);
+        const tokenSet = await client.callback(
+            'https://conf-x-event.vercel.app/', // Your callback URL
+            params,
+            {
+                nonce: req.session.nonce,
+                state: req.session.state
+            }
+        );
+
+        const userInfo = await client.userinfo(tokenSet.access_token);
+        req.session.userInfo = userInfo;
+
+        res.redirect('/');
+    } catch (err) {
+        console.error('Callback error:', err);
+        res.redirect('/');
+    }
+});
+
+// Logout route
+app.get('/logout', (req, res) => {
+    req.session.destroy();
+    const logoutUrl = `https://YOUR_USER_POOL_DOMAIN/logout?client_id=6jecsaada8vulttlg0am2mntc0&logout_uri=https://conf-x-event.vercel.app/`;
+    res.redirect(logoutUrl);
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+
+mkdir cognito-auth
+cd cognito-auth
+npm init -y
 
 Invoke URL
 https://l5gcx126r8.execute-api.us-east-1.amazonaws.com/Prod
