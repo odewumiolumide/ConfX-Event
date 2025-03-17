@@ -57,6 +57,46 @@
 </style>
 
 <style>
+    .modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+
+
+
+<style>
     /* General Styles for Payment Section */
 .create-nft-box {
     background-color: #f9f9f9; /* Light background for contrast */
@@ -256,23 +296,23 @@
                     <div class="create-nft-box float-left w-100 position-relative">
                         <div class="form-group">
                             <label>First name *</label>
-                            <input type="text" class="form-control" placeholder="First Name" required>
+                            <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
                         </div>
                         <div class="form-group">
                             <label>Last name *</label>
-                            <input type="text" class="form-control" placeholder="Last Name" required>
+                            <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
                         </div>
                         <div class="form-group special">
                             <label>Phone *</label>
-                            <input type="number" class="form-control" placeholder="Phone" required>
+                            <input type="number" class="form-control" id="phone" placeholder="Phone" required>
                         </div>
                         <div class="form-group special">
                             <label>Email address *</label>
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group special">
                             <label>Country / Region *</label>
-                            <select class="form-control" required>
+                            <select class="form-control" id="country" required>
                                 <option value="" disabled selected>Select your country</option>
                                 <option>America</option>
                                 <option>Australia</option>
@@ -282,19 +322,19 @@
                         </div>
                         <div class="form-group special">
                             <label>Street address *</label>
-                            <input type="text" class="form-control" placeholder="Street Address" required>
+                            <input type="text" class="form-control" id="address" placeholder="Street Address" required>
                         </div>
                         <div class="form-group special">
                             <label>Date of Birth *</label>
-                            <input type="date" class="form-control" required>
+                            <input type="date" class="form-control" id="dob" required>
                         </div>
                         <div class="form-group special">
                             <label>State *</label>
-                            <input type="text" class="form-control" placeholder="State" required>
+                            <input type="text" class="form-control" id="state" placeholder="State" required>
                         </div>
                         <div class="form-group special">
                             <label>Postcode / ZIP *</label>
-                            <input type="number" class="form-control" placeholder="Postcode" required>
+                            <input type="number" class="form-control" id="postcode" placeholder="Postcode" required>
                         </div>
                     </div>
                 </div>
@@ -328,13 +368,35 @@
                             <div id="total-cost">Total Cost: $0.00</div>
                         </div>
                         <div class="btn-outer">
-                            <button id="checkout" type="button" class="default-btn hover-effect" disabled>Make your payment</button>
+                            <button id="checkout" type="button" class="default-btn hover-effect" disabled>Register Now</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
+
+    <!-- Event Confirmation Modal -->
+<div class="modal" id="confirmationModal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Event Confirmation</h2>
+        <p><strong>Event Name:</strong> <span id="eventName"></span></p>
+        <p><strong>Date/Time:</strong> <span id="eventDate"></span></p>
+        <p><strong>Location:</strong> <span id="eventLocation"></span></p>
+        <p><strong>User ID:</strong> <span id="userId"></span></p>
+        <p><strong>Type:</strong> Free Pass</p>
+        <p><strong>Price:</strong> $0.00</p>
+        <p><strong>Attendee:</strong> <span id="attendeeName"></span></p>
+        <p><strong>Payment Status:</strong> Success</p>
+        <p><strong>Phone:</strong> <span id="phoneDisplay"></span></p>
+        <div class="btn-outer">
+            <button id="print-button" onclick="printAndHide();">Print</button>
+            <button id="download-button" onclick="downloadPDF();">Download PDF</button>
+            <button id="share-button" onclick="shareEvent();">Share</button>
+        </div>
+    </div>
+</div>
 </section>
 
 <!-- FOOTER SECTION START -->
@@ -451,6 +513,7 @@
 <script src="assets/js/aos.js"></script>
 <script src="assets/js/custom.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 
 <script>
@@ -480,6 +543,7 @@
    });
 </script>
 
+
 <script>
     function populateCheckout() {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -489,6 +553,11 @@
         const productList = document.getElementById('product-list');
         productList.innerHTML = '';
 
+        // Store event details
+        let eventName = 'Marketing Strategies';
+        let eventDate = 'June 12, 2025, 9:00 AM - 6:00 PM';
+        let eventLocation = 'Innovation Hub, Nairobi, Kenya';
+
         // Populate the product list and calculate subtotal
         cartItems.forEach(item => {
             const productDiv = document.createElement('div');
@@ -496,6 +565,13 @@
             productDiv.innerHTML = `<span>${item.title} × ${item.quantity} = $${item.total}</span>`;
             productList.appendChild(productDiv);
             subtotal += parseFloat(item.total);
+
+            // Fetch event details from the cart
+            if (!eventName) {
+                eventName = item.eventName; // Ensure this property exists in your items
+                eventDate = item.eventDate; // Ensure this property exists in your items
+                eventLocation = item.eventLocation; // Ensure this property exists in your items
+            }
         });
 
         // Update the subtotal display
@@ -515,105 +591,142 @@
 
         // Enable/disable payment methods based on total price
         updatePaymentMethods(totalPrice);
+
+        // Store event details in a global variable for use later
+        window.eventDetails = {
+            name: eventName,
+            date: eventDate,
+            location: eventLocation
+        };
     }
 
     function updatePaymentMethods(totalCost) {
         const freeOption = document.getElementById('paymentMethod1');
         const directTransferOption = document.getElementById('paymentMethod2');
-        const walletPaymentOption = document.getElementById('paymentMethod3');
-        const paymentMessage = document.getElementById('payment-message'); // New message element for feedback
 
+        // Enable or disable payment options based on the total cost
         if (totalCost > 0) {
             freeOption.disabled = true; // Disable free option for paid events
             directTransferOption.disabled = false; // Enable direct transfer
-            walletPaymentOption.disabled = false; // Enable wallet payment
-            paymentMessage.innerText = "You have selected a paid event. Please choose a payment method.";
         } else {
             freeOption.disabled = false; // Enable free option
             directTransferOption.disabled = true; // Disable direct transfer
-            walletPaymentOption.disabled = true; // Disable wallet payment
-            paymentMessage.innerText = "You have selected a free event. Only the FREE payment option is available.";
         }
     }
 
-    function placeOrder() {
-        // Alert the user that the order was placed successfully
-        alert("Order placed successfully!");
-
-        // Clear the cart from local storage
-        localStorage.removeItem('cart');
-
-        // Redirect to another page (e.g., home page)
-        window.location.href = 'index.html'; // Change this URL as needed
-    }
-
-    // Initialize the page
-    document.addEventListener('DOMContentLoaded', populateCheckout);
-</script>
-
-
-
-<script>
-    let cart = 1; // Assume the cart starts with 1 item initially
-
-    const freeOption = document.getElementById('paymentMethod1');
-    const paidOption = document.getElementById('paymentMethod2'); // Paid option
+    const requiredInputs = document.querySelectorAll('.form-control[required]');
     const checkoutButton = document.getElementById('checkout');
 
-    // Event listeners for payment method selection
-    freeOption.addEventListener('change', updateButtonState);
-    paidOption.addEventListener('change', updateButtonState);
+    // Enable the button if all required fields are filled
+    function checkFormCompletion() {
+        const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+        const eventTypeSelected = document.getElementById('paymentMethod1').checked || document.getElementById('paymentMethod2').checked;
+        checkoutButton.disabled = !(allFilled && eventTypeSelected);
+    }
 
-    // Add event listeners to form inputs to enable button when filled
-    const requiredInputs = document.querySelectorAll('.form-control[required]');
+    // Add event listeners to form inputs to check completion
     requiredInputs.forEach(input => {
         input.addEventListener('input', checkFormCompletion);
     });
 
-    function updateButtonState() {
-        checkoutButton.innerText = freeOption.checked ? "Register Now" : "Make your payment";
-        checkFormCompletion(); // Check if the form is complete
-    }
-
-    function checkFormCompletion() {
-        const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
-        const eventTypeSelected = freeOption.checked || paidOption.checked;
-        checkoutButton.disabled = !(allFilled && eventTypeSelected);
-    }
+    // Event listeners for payment method selection
+    document.getElementById('paymentMethod1').addEventListener('change', checkFormCompletion);
+    document.getElementById('paymentMethod2').addEventListener('change', checkFormCompletion);
 
     checkoutButton.addEventListener('click', function() {
-        if (freeOption.checked) {
-            const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
-            if (allFilled) {
-                alert("Order placed successfully! A confirmation email has been sent to your email.");
-                cart = 0; // Reset the cart to 0
-                console.log("Cart after free registration:", cart); // Debugging log
-                window.location.href = "https://mail.google.com/";
-            } else {
-                alert("Please fill in all required fields correctly before registering.");
-            }
-        } else if (paidOption.checked) {
-            stripe.redirectToCheckout({
-                lineItems: [{ price: "price_1QcUVfBiTeEdaPhKPXCaY5bl", quantity: 1 }],
-                mode: "payment",
-                successUrl: "http://127.0.0.1:5500/success.html",
-                cancelUrl: "http://127.0.0.1:5500/cancel.html",
-            }).then(function(result) {
-                if (result.error) {
-                    alert('Payment was unsuccessful: ' + result.error.message);
-                }
-            });
-        }
+        // Capture user details
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const phone = document.getElementById('phone').value;
+
+        // Show success alert
+        alert("Your booking is successfully saved!");
+
+        // Display data in the modal
+        document.getElementById('attendeeName').innerText = `${firstName} ${lastName}`;
+        document.getElementById('phoneDisplay').innerText = phone;
+        document.getElementById('userId').innerText = 'USR-' + Math.floor(Math.random() * 1000000);
+
+        // Display event details in the modal
+        document.getElementById('eventName').innerText = window.eventDetails.name;
+        document.getElementById('eventDate').innerText = window.eventDetails.date;
+        document.getElementById('eventLocation').innerText = window.eventDetails.location;
+
+        // Show the confirmation modal
+        showModal();
+
+        // Clear form fields (optional)
+        document.getElementById('checkout-form').reset();
+
+        // Optionally clear the cart
+        localStorage.removeItem('cart');
+        localStorage.setItem('showModal', 'true'); // Set flag to show modal on refresh
     });
 
-    // Check for successful payment on load of the success page
-    window.onload = function() {
-        if (window.location.href.includes("success.html")) {
-            cart = 0; // Reset the cart to 0 upon returning from the success page
-            console.log("Cart after returning from success page:", cart); // Debugging log
+    function showModal() {
+        document.getElementById('confirmationModal').style.display = 'block';
+    }
+
+     // Print and hide buttons
+    function printAndHide() {
+        const modal = document.getElementById('confirmationModal');
+        const buttons = modal.querySelectorAll('.btn-outer button');
+
+        // Hide buttons when print is initiated
+        buttons.forEach(button => button.style.display = 'none'); // Hide buttons
+        window.print(); // Open print dialog
+        // Show buttons again after a brief delay
+        setTimeout(() => {
+            buttons.forEach(button => button.style.display = 'inline-block'); // Show buttons again
+        }, 100); // Adjust the delay as needed
+    }
+
+    // Download PDF functionality
+    function downloadPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Add content to the PDF
+        doc.setFontSize(16);
+        doc.text('Event Registration Confirmation', 20, 20);
+        doc.setFontSize(12);
+        doc.text(`User ID: ${document.getElementById('userId').innerText}`, 20, 40);
+        doc.text(`Name: ${document.getElementById('attendeeName').innerText}`, 20, 50);
+        doc.text(`Phone: ${document.getElementById('phoneDisplay').innerText}`, 20, 60);
+        doc.text(`Event Name: ${document.getElementById('eventName').innerText}`, 20, 70);
+        doc.text(`Date/Time: ${document.getElementById('eventDate').innerText}`, 20, 80);
+        doc.text(`Location: ${document.getElementById('eventLocation').innerText}`, 20, 90);
+
+        // Save the PDF
+        doc.save('event-confirmation.pdf');
+    }
+
+    // Share functionality
+    function shareEvent() {
+        const shareData = {
+            title: 'Event Registration',
+            text: `I registered for an event!\nName: ${document.getElementById('attendeeName').innerText}\nEvent: ${document.getElementById('eventName').innerText}`,
+            url: window.location.href,
+        };
+        
+        if (navigator.share) {
+            navigator.share(shareData)
+                .then(() => console.log('Share successful'))
+                .catch((error) => console.error('Error sharing:', error));
+        } else {
+            alert("Sharing not supported on this browser.");
         }
+    }
+
+    // Close modal
+    document.getElementById('closeModal').onclick = function() {
+        document.getElementById('confirmationModal').style.display = 'none';
     };
 
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', populateCheckout);
+
+    
 </script>
 
 

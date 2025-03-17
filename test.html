@@ -1780,3 +1780,75 @@ https://l5gcx126r8.execute-api.us-east-1.amazonaws.com/Prod
 
 https://us-east-1sttzqm7d9.auth.us-east-1.amazoncognito.com/login?client_id=29q727d2oapte0k5crbrpltprk&redirect_uri=http://localhost:5500/Dashboard/dashboard/index5.html&response_type=code&scope=email+openid+phone
 // https://us-east-1dubaewr3u.auth.us-east-1.amazoncognito.com/login?client_id=2pmkp61csu9r84477pmmpd515q&response_type=code&scope=email+openid+phone&redirect_uri=http://localhost:5500/index.html//
+
+
+<script>
+    function populateCheckout() {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        let subtotal = 0;
+
+        // Clear previous product list
+        const productList = document.getElementById('product-list');
+        productList.innerHTML = '';
+
+        // Populate the product list and calculate subtotal
+        cartItems.forEach(item => {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product-outer';
+            productDiv.innerHTML = `<span>${item.title} × ${item.quantity} = $${item.total}</span>`;
+            productList.appendChild(productDiv);
+            subtotal += parseFloat(item.total);
+        });
+
+        // Update the subtotal display
+        document.getElementById('subtotal').innerText = `${subtotal.toFixed(2)} $`;
+
+        // Calculate total price based on subtotal
+        let totalPrice;
+        const shippingCost = 9.00; // Flat rate shipping
+        if (subtotal > 1.00) {
+            totalPrice = subtotal + shippingCost; // Adding flat rate shipping for paid events
+        } else {
+            totalPrice = 0.00; // No charge for events that are $1.00 or less
+        }
+
+        // Update the total cost display
+        document.getElementById('total-cost').innerText = `Total Cost: $${totalPrice.toFixed(2)}`;
+
+        // Enable/disable payment methods based on total price
+        updatePaymentMethods(totalPrice);
+    }
+
+    function updatePaymentMethods(totalCost) {
+        const freeOption = document.getElementById('paymentMethod1');
+        const directTransferOption = document.getElementById('paymentMethod2');
+        const walletPaymentOption = document.getElementById('paymentMethod3');
+        const paymentMessage = document.getElementById('payment-message'); // New message element for feedback
+
+        if (totalCost > 0) {
+            freeOption.disabled = true; // Disable free option for paid events
+            directTransferOption.disabled = false; // Enable direct transfer
+            walletPaymentOption.disabled = false; // Enable wallet payment
+            paymentMessage.innerText = "You have selected a paid event. Please choose a payment method.";
+        } else {
+            freeOption.disabled = false; // Enable free option
+            directTransferOption.disabled = true; // Disable direct transfer
+            walletPaymentOption.disabled = true; // Disable wallet payment
+            paymentMessage.innerText = "You have selected a free event. Only the FREE payment option is available.";
+        }
+    }
+
+    function placeOrder() {
+        // Alert the user that the order was placed successfully
+        alert("Order placed successfully!");
+
+        // Clear the cart from local storage
+        localStorage.removeItem('cart');
+
+        // Redirect to another page (e.g., home page)
+        window.location.href = 'index.html'; // Change this URL as needed
+    }
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', populateCheckout);
+</script>
