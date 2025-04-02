@@ -1,11 +1,12 @@
 <!-- meta tags and other links -->
+ 
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Dashboard Page</title>
+    <title> Admin Dashboard </title>
     <link rel="icon" type="image/png" href="/Dashboard/assets/images/favicon-16x16.png">
     <!-- remix icon font css  -->
     <link rel="stylesheet" href="../assets/css/remixicon.css">
@@ -40,158 +41,111 @@
 </head>
 <body>
 
-    <!-- ..::  header area start ::.. -->
-    <aside class="sidebar">
-        <button type="button" class="sidebar-close-btn">
-            <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
-        </button>
-        <div>
-            <a href="dashboard/index.html" class="sidebar-logo">
-                <img src="/assets/images/ConfX.png"  alt="site logo" class="light-logo">
-                <img src="/assets/images/index3-header-logo.png" alt="site logo" class="dark-logo">
-                <img src="/assets/images/index3-header-logo.png" alt="site logo" class="logo-icon">
-            </a>
-        </div>
-        <div class="sidebar-menu-area">
-            <ul class="sidebar-menu" id="sidebar-menu">
-                <li class="dropdown">
-                    <a href="javascript:void(0)">
-                        <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
-                        <span>Dashboard</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li>
-                            <a href="/Dashboard/dashboard/index5.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Home</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-menu-group-title">Application</li>
-                
-                <li>
-                    <a href="/Dashboard/componentspage/create-event.html">
-                        <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-                        <span>Create Event</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Dashboard/view-event.html">
-                        <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
-                        <span>View Event</span>
-                    </a>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)">
-                        <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
-                        <span>Invoice</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li>
-                            <a href="/Dashboard/invoice/invoice-list.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> List</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/invoice/invoice-preview.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Preview</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/invoice/invoice-add.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add new</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/invoice/invoice-edit.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
-                        </li>
-                    </ul>
-                </li>
-                
-    
-                <li class="sidebar-menu-group-title">UI Elements</li>
-    
-                   
-                <li class="dropdown">
-                    <a href="javascript:void(0)">
-                        <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
-                        <span>Users</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li>
-                            <a href="/Dashboard/users/users-list.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Users List</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/users/users-grid.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/users/add-user.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add User</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/users/view-profile.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
-                        </li>
-                    </ul>
-                </li>
-    
-                <li class="sidebar-menu-group-title">Application</li>
-    
-                <li class="dropdown">
-                    <a href="javascript:void(0)">
-                        <iconify-icon icon="simple-line-icons:vector" class="menu-icon"></iconify-icon>
-                        <span>Authentication</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li>
-                            <a href="/Dashboard/authentication/signin.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Sign In</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/authentication/signup.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Sign Up</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/authentication/forgotpassword.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Forgot Password</a>
-                        </li>
-                    </ul>
-                </li>
-                
-                
-                <li>
-                    <a href="/Dashboard/faq.html">
-                        <iconify-icon icon="mage:message-question-mark-round" class="menu-icon"></iconify-icon>
-                        <span>FAQs.</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Dashboard/error.html">
-                        <iconify-icon icon="streamline:straight-face" class="menu-icon"></iconify-icon>
-                        <span>404</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Dashboard/termscondition.html">
-                        <iconify-icon icon="octicon:info-24" class="menu-icon"></iconify-icon>
-                        <span>Terms & Conditions</span>
-                    </a>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)">
-                        <iconify-icon icon="icon-park-outline:setting-two" class="menu-icon"></iconify-icon>
-                        <span>Settings</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        
-                        
-                        <li>
-                            <a href="/Dashboard/settings/notification-alert.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Notification Alert</a>
-                        </li>
+   <!-- ..::  header area start ::.. -->
+   <aside class="sidebar">
+    <button type="button" class="sidebar-close-btn">
+        <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
+    </button>
+    <div>
+        <a href="dashboard/index.html" class="sidebar-logo">
+            <img src="/assets/images/ConfX.png"  alt="site logo" class="light-logo">
+            <img src="/assets/images/index3-header-logo.png" alt="site logo" class="dark-logo">
+            <img src="/assets/images/index3-header-logo.png" alt="site logo" class="logo-icon">
+        </a>
+    </div>
+    <div class="sidebar-menu-area">
+        <ul class="sidebar-menu" id="sidebar-menu">
+            <li class="dropdown">
+                <a href="javascript:void(0)">
+                    <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+                    <span>Dashboard</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="/Dashboard/dashboard/index5.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Home</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-menu-group-title">Application</li>
+            
+            <li>
+                <a href="/Dashboard/componentspage/create-event.html">
+                    <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
+                    <span>Create Event</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Dashboard/view-event.html">
+                    <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
+                    <span>View Event</span>
+                </a>
+            </li>
+            
 
-                        <li>
-                            <a href="/Dashboard/settings/Notification.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Notification</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/Dashboard/settings/currencies.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Currencies</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/settings/language.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Languages</a>
-                        </li>
-                        
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </aside>    <!-- ..::  header area end ::.. -->
+            <li class="sidebar-menu-group-title">UI Elements</li>
+        
+            <li class="dropdown">
+                <a href="javascript:void(0)">
+                    <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
+                    <span>Users</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="/Dashboard/users/users-list.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Users List</a>
+                    </li>
+                    <li>
+                        <a href="/Dashboard/users/users-grid.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
+                    </li>
+                    <li>
+                        <a href="/Dashboard/users/add-user.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add User</a>
+                    </li>
+                    <li>
+                        <a href="/Dashboard/users/view-profile.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> View Profile</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="sidebar-menu-group-title">Application</li>
+
+            <li class="dropdown">
+                <a href="javascript:void(0)">
+                    <iconify-icon icon="simple-line-icons:vector" class="menu-icon"></iconify-icon>
+                    <span>Authentication</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li>
+                        <a href="https://us-east-1ubphxoxdi.auth.us-east-1.amazoncognito.com/login?client_id=6jecsaada8vulttlg0am2mntc0&redirect_uri=https%3A%2F%2Fconf-x-event.vercel.app%2FDashboard%2Fdashboard%2Findex5.html&response_type=code&scope=email+openid+phone"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Sign In</a>
+                    </li>
+                    <li>
+                        <a href="https://us-east-1ubphxoxdi.auth.us-east-1.amazoncognito.com/signup?client_id=6jecsaada8vulttlg0am2mntc0&redirect_uri=https%3A%2F%2Fconf-x-event.vercel.app%2FDashboard%2Fdashboard%2Findex5.html&response_type=code&scope=email+openid+phone"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="https://us-east-1ubphxoxdi.auth.us-east-1.amazoncognito.com/forgotPassword?client_id=6jecsaada8vulttlg0am2mntc0&redirect_uri=https%3A%2F%2Fconf-x-event.vercel.app%2FDashboard%2Fdashboard%2Findex5.html&response_type=code&scope=email+openid+phone"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Forgot Password</a>
+                    </li>
+                </ul>
+            </li>             
+            
+            <li>
+                <a href="/Dashboard/faq.html">
+                    <iconify-icon icon="mage:message-question-mark-round" class="menu-icon"></iconify-icon>
+                    <span>FAQs.</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Dashboard/error.html">
+                    <iconify-icon icon="streamline:straight-face" class="menu-icon"></iconify-icon>
+                    <span>404</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Dashboard/termscondition.html">
+                    <iconify-icon icon="octicon:info-24" class="menu-icon"></iconify-icon>
+                    <span>Terms & Conditions</span>
+                </a>
+            </li>             
+        </ul>
+    </div>
+</aside>    <!-- ..::  header area end ::.. -->
 
     <main class="dashboard-main">
 
@@ -369,11 +323,7 @@
                                     <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon> My Profile
                                 </a>
                             </li>
-                            <li>
-                                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="/Dashboard/settings/Notification.html">
-                                    <iconify-icon icon="tabler:message-check" class="icon text-xl"></iconify-icon> Inbox
-                                </a>
-                            </li>
+                           
                             <li>
                                 <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="/Dashboard/users/view-profile.html">
                                     <iconify-icon icon="icon-park-outline:setting-two" class="icon text-xl"></iconify-icon> Setting

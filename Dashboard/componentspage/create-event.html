@@ -1,14 +1,9 @@
-<!-- meta tags and other links -->
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
-
-<!-- Mirrored from laravel.wowdash.wowtheme7.com/componentspage/calendar by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 27 Oct 2024 23:28:59 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Event Page</title>
+    <title> Create Event </title>
     <link rel="icon" type="image/png" href="/Dashboard/assets/images/favicon-16x16.png">
     <!-- remix icon font css  -->
     <link rel="stylesheet" href="../assets/css/remixicon.css">
@@ -41,16 +36,26 @@
     <!-- main css -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
+<style>
+  .dropdown-menu .dropdown-item {
+    margin: 4px 0; /* Adjust the vertical space between items */
+}
+
+.dropdown-menu .icon {
+    margin-right: 8px; /* Space between the icon and the text */
+}
+</style>
 <body>
 
-    <!-- ..::  header area start ::.. -->
+     <!-- ..::  header area start ::.. -->
     <aside class="sidebar">
         <button type="button" class="sidebar-close-btn">
             <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
         </button>
         <div>
             <a href="dashboard/index.html" class="sidebar-logo">
-                <img src="/assets/images/index3-header-logo.png" style="background-color: #000;" alt="site logo" class="light-logo">
+                <img src="/assets/images/ConfX.png"  alt="site logo" class="light-logo">
                 <img src="/assets/images/index3-header-logo.png" alt="site logo" class="dark-logo">
                 <img src="/assets/images/index3-header-logo.png" alt="site logo" class="logo-icon">
             </a>
@@ -82,105 +87,10 @@
                         <span>View Event</span>
                     </a>
                 </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)">
-                        <iconify-icon icon="hugeicons:invoice-03" class="menu-icon"></iconify-icon>
-                        <span>Invoice</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li>
-                            <a href="/Dashboard/invoice/invoice-list.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> List</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/invoice/invoice-preview.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Preview</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/invoice/invoice-add.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Add new</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/invoice/invoice-edit.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Edit</a>
-                        </li>
-                    </ul>
-                </li>
                 
     
                 <li class="sidebar-menu-group-title">UI Elements</li>
-    
-                <li class="dropdown">
-                    <a href="javascript:void(0)">
-                        <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
-                        <span>Components</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        <li>
-                            <a href="componentspage/typography.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Typography</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/colors.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Colors</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/button.html"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> Button</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/dropdown.html"><i class="ri-circle-fill circle-icon text-lilac-600 w-auto"></i> Dropdown</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/alert.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Alerts</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/card.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Card</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/carousel.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Carousel</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/avatar.html"><i class="ri-circle-fill circle-icon text-success-main w-auto"></i> Avatars</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/progress.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Progress bar</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/tabs.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Tab & Accordion</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/pagination.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Pagination</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/badges.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Badges</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/tooltip.html"><i class="ri-circle-fill circle-icon text-lilac-600 w-auto"></i> Tooltip & Popover</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/videos.html"><i class="ri-circle-fill circle-icon text-cyan w-auto"></i> Videos</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/starrating.html"><i class="ri-circle-fill circle-icon text-indigo w-auto"></i> Star Ratings</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/tags.html"><i class="ri-circle-fill circle-icon text-purple w-auto"></i> Tags</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/list.html"><i class="ri-circle-fill circle-icon text-red w-auto"></i> List</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/calendar.html"><i class="ri-circle-fill circle-icon text-yellow w-auto"></i> Calendar</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/radio.html"><i class="ri-circle-fill circle-icon text-orange w-auto"></i> Radio</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/switch.html"><i class="ri-circle-fill circle-icon text-pink w-auto"></i> Switch</a>
-                        </li>
-                        <li>
-                            <a href="componentspage/imageupload.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Upload</a>
-                        </li>
-                    </ul>
-                </li>
-                
-                
-                
-               
+            
                 <li class="dropdown">
                     <a href="javascript:void(0)">
                         <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
@@ -211,17 +121,16 @@
                     </a>
                     <ul class="sidebar-submenu">
                         <li>
-                            <a href="/Dashboard/authentication/signin.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Sign In</a>
+                            <a href="https://us-east-1ubphxoxdi.auth.us-east-1.amazoncognito.com/login?client_id=6jecsaada8vulttlg0am2mntc0&redirect_uri=https%3A%2F%2Fconf-x-event.vercel.app%2FDashboard%2Fdashboard%2Findex5.html&response_type=code&scope=email+openid+phone"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Sign In</a>
                         </li>
                         <li>
-                            <a href="/Dashboard/authentication/signup.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Sign Up</a>
+                            <a href="https://us-east-1ubphxoxdi.auth.us-east-1.amazoncognito.com/signup?client_id=6jecsaada8vulttlg0am2mntc0&redirect_uri=https%3A%2F%2Fconf-x-event.vercel.app%2FDashboard%2Fdashboard%2Findex5.html&response_type=code&scope=email+openid+phone"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Sign Up</a>
                         </li>
                         <li>
-                            <a href="/Dashboard/authentication/forgotpassword.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Forgot Password</a>
+                            <a href="https://us-east-1ubphxoxdi.auth.us-east-1.amazoncognito.com/forgotPassword?client_id=6jecsaada8vulttlg0am2mntc0&redirect_uri=https%3A%2F%2Fconf-x-event.vercel.app%2FDashboard%2Fdashboard%2Findex5.html&response_type=code&scope=email+openid+phone"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Forgot Password</a>
                         </li>
                     </ul>
-                </li>
-               
+                </li>             
                 
                 <li>
                     <a href="/Dashboard/faq.html">
@@ -240,32 +149,13 @@
                         <iconify-icon icon="octicon:info-24" class="menu-icon"></iconify-icon>
                         <span>Terms & Conditions</span>
                     </a>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)">
-                        <iconify-icon icon="icon-park-outline:setting-two" class="menu-icon"></iconify-icon>
-                        <span>Settings</span>
-                    </a>
-                    <ul class="sidebar-submenu">
-                        
-                        
-                        <li>
-                            <a href="/Dashboard/settings/notification-alert.html"><i class="ri-circle-fill circle-icon text-info-main w-auto"></i> Notification Alert</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/Dashboard/settings/currencies.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Currencies</a>
-                        </li>
-                        <li>
-                            <a href="/Dashboard/settings/language.html"><i class="ri-circle-fill circle-icon text-danger-main w-auto"></i> Languages</a>
-                        </li>
-                       
-                    </ul>
-                </li>
+                </li>             
             </ul>
         </div>
     </aside>    <!-- ..::  header area end ::.. -->
 
+    
+    
     <main class="dashboard-main">
 
         <!-- ..::  navbar start ::.. -->
@@ -442,11 +332,7 @@
                                     <iconify-icon icon="solar:user-linear" class="icon text-xl"></iconify-icon> My Profile
                                 </a>
                             </li>
-                            <li>
-                                <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="/Dashboard/settings/Notification.html">
-                                    <iconify-icon icon="tabler:message-check" class="icon text-xl"></iconify-icon> Inbox
-                                </a>
-                            </li>
+                           
                             <li>
                                 <a class="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3" href="/Dashboard/users/view-profile.html">
                                     <iconify-icon icon="icon-park-outline:setting-two" class="icon text-xl"></iconify-icon> Setting
@@ -463,12 +349,15 @@
             </div>
         </div>
     </div>
-</div>        <!-- ..::  navbar end ::.. -->
+</div>     
+
+
+<!-- ..::  navbar end ::.. -->
         <div class="dashboard-main-body">
             
             <!-- ..::  breadcrumb  start ::.. -->
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
-    <h6 class="fw-semibold mb-0">Create Event</h6>
+    <h6 class="fw-semibold mb-0"> Create Event</h6>
     <ul class="d-flex align-items-center gap-2">
         <li class="fw-medium">
             <a href="../dashboard/index5.html" class="d-flex align-items-center gap-1 hover-text-primary">
@@ -486,632 +375,252 @@
     <div class="col-xxl-3 col-lg-4">
         <div class="card h-100 p-0">
             <div class="card-body p-24">
-                <button type="button" class="btn btn-primary text-sm btn-sm px-12 py-12 w-100 radius-8 d-flex align-items-center gap-2 mb-32" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary text-sm btn-sm px-12 py-12 w-100 radius-8 d-flex align-items-center gap-2 mb-32" data-bs-toggle="modal" data-bs-target="#addEventModal">
                     <iconify-icon icon="fa6-regular:square-plus" class="icon text-lg line-height-1"></iconify-icon>
                     Add New Event
                 </button>
-
-                <div class="mt-32">
-                    <div class="event-item d-flex align-items-center justify-content-between gap-4 pb-16 mb-16 border border-start-0 border-end-0 border-top-0">
-                        <div class="">
-                            <div class="d-flex align-items-center gap-10">
-                                <span class="w-12-px h-12-px bg-warning-600 rounded-circle fw-medium"></span>
-                                <span class="text-secondary-light">Today, 10:30 PM - 02:30 AM</span>
-                            </div>
-                            <span class="text-primary-light fw-semibold text-md mt-4">Design Conference</span>
-                        </div>
-                        <div class="dropdown">
-                            <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <iconify-icon icon="entypo:dots-three-vertical" class="icon text-secondary-light"></iconify-icon>
-                            </button>
-                            <ul class="dropdown-menu p-12 border bg-base shadow">
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalView">
-                                        <iconify-icon icon="hugeicons:view" class="icon text-lg line-height-1"></iconify-icon>
-                                        View
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
-                                        <iconify-icon icon="lucide:edit" class="icon text-lg line-height-1"></iconify-icon>
-                                        Edit
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="delete-item dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-danger-100 text-hover-danger-600 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalDelete">
-                                        <iconify-icon icon="fluent:delete-24-regular" class="icon text-lg line-height-1"></iconify-icon>
-                                        Delete
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="event-item d-flex align-items-center justify-content-between gap-4 pb-16 mb-16 border border-start-0 border-end-0 border-top-0">
-                        <div class="">
-                            <div class="d-flex align-items-center gap-10">
-                                <span class="w-12-px h-12-px bg-success-600 rounded-circle fw-medium"></span>
-                                <span class="text-secondary-light">Today, 10:30 PM - 02:30 AM</span>
-                            </div>
-                            <span class="text-primary-light fw-semibold text-md mt-4">Weekend Festival</span>
-                        </div>
-                        <div class="dropdown">
-                            <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <iconify-icon icon="entypo:dots-three-vertical" class="icon text-secondary-light"></iconify-icon>
-                            </button>
-                            <ul class="dropdown-menu p-12 border bg-base shadow">
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalView">
-                                        <iconify-icon icon="hugeicons:view" class="icon text-lg line-height-1"></iconify-icon>
-                                        View
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
-                                        <iconify-icon icon="lucide:edit" class="icon text-lg line-height-1"></iconify-icon>
-                                        Edit
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="delete-item dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-danger-100 text-hover-danger-600 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalDelete">
-                                        <iconify-icon icon="fluent:delete-24-regular" class="icon text-lg line-height-1"></iconify-icon>
-                                        Delete
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="event-item d-flex align-items-center justify-content-between gap-4 pb-16 mb-16 border border-start-0 border-end-0 border-top-0">
-                        <div class="">
-                            <div class="d-flex align-items-center gap-10">
-                                <span class="w-12-px h-12-px bg-info-600 rounded-circle fw-medium"></span>
-                                <span class="text-secondary-light">Today, 10:30 PM - 02:30 AM</span>
-                            </div>
-                            <span class="text-primary-light fw-semibold text-md mt-4">Design Conference</span>
-                        </div>
-                        <div class="dropdown">
-                            <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <iconify-icon icon="entypo:dots-three-vertical" class="icon text-secondary-light"></iconify-icon>
-                            </button>
-                            <ul class="dropdown-menu p-12 border bg-base shadow">
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalView">
-                                        <iconify-icon icon="hugeicons:view" class="icon text-lg line-height-1"></iconify-icon>
-                                        View
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
-                                        <iconify-icon icon="lucide:edit" class="icon text-lg line-height-1"></iconify-icon>
-                                        Edit
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="delete-item dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-danger-100 text-hover-danger-600 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalDelete">
-                                        <iconify-icon icon="fluent:delete-24-regular" class="icon text-lg line-height-1"></iconify-icon>
-                                        Delete
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="event-item d-flex align-items-center justify-content-between gap-4 pb-16 mb-16 border border-start-0 border-end-0 border-top-0">
-                        <div class="">
-                            <div class="d-flex align-items-center gap-10">
-                                <span class="w-12-px h-12-px bg-warning-600 rounded-circle fw-medium"></span>
-                                <span class="text-secondary-light">Today, 10:30 PM - 02:30 AM</span>
-                            </div>
-                            <span class="text-primary-light fw-semibold text-md mt-4">Ultra Europe 2019</span>
-                        </div>
-                        <div class="dropdown">
-                            <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <iconify-icon icon="entypo:dots-three-vertical" class="icon text-secondary-light"></iconify-icon>
-                            </button>
-                            <ul class="dropdown-menu p-12 border bg-base shadow">
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalView">
-                                        <iconify-icon icon="hugeicons:view" class="icon text-lg line-height-1"></iconify-icon>
-                                        View
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
-                                        <iconify-icon icon="lucide:edit" class="icon text-lg line-height-1"></iconify-icon>
-                                        Edit
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="delete-item dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-danger-100 text-hover-danger-600 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalDelete">
-                                        <iconify-icon icon="fluent:delete-24-regular" class="icon text-lg line-height-1"></iconify-icon>
-                                        Delete
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="event-item d-flex align-items-center justify-content-between gap-4 pb-16 mb-16 border border-start-0 border-end-0 border-top-0">
-                        <div class="">
-                            <div class="d-flex align-items-center gap-10">
-                                <span class="w-12-px h-12-px bg-warning-600 rounded-circle fw-medium"></span>
-                                <span class="text-secondary-light">Today, 10:30 PM - 02:30 AM</span>
-                            </div>
-                            <span class="text-primary-light fw-semibold text-md mt-4">Design Conference</span>
-                        </div>
-                        <div class="dropdown">
-                            <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <iconify-icon icon="entypo:dots-three-vertical" class="icon text-secondary-light"></iconify-icon>
-                            </button>
-                            <ul class="dropdown-menu p-12 border bg-base shadow">
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalView">
-                                        <iconify-icon icon="hugeicons:view" class="icon text-lg line-height-1"></iconify-icon>
-                                        View
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-neutral-200 text-hover-neutral-900 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
-                                        <iconify-icon icon="lucide:edit" class="icon text-lg line-height-1"></iconify-icon>
-                                        Edit
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button" class="delete-item dropdown-item px-16 py-8 rounded text-secondary-light bg-hover-danger-100 text-hover-danger-600 d-flex align-items-center gap-10" data-bs-toggle="modal" data-bs-target="#exampleModalDelete">
-                                        <iconify-icon icon="fluent:delete-24-regular" class="icon text-lg line-height-1"></iconify-icon>
-                                        Delete
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                
+                <div class="mt-32" id="eventsContainer">
+                    <!-- Dynamic event items will be injected here -->
                 </div>
-
             </div>
         </div>
     </div>
     <div class="col-xxl-9 col-lg-8">
         <div class="card h-100 p-0">
             <div class="card-body p-24">
-                <div id='wrap'>
-                    <div id='calendar'></div>
-                    <div style='clear:both'></div>
-                </div>
+                <div id="calendar"></div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal Add Event -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered">
-        <div class="modal-content radius-16 bg-base">
-            <div class="modal-header py-16 px-24 border border-top-0 border-start-0 border-end-0">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Event Details</h1>
+<!-- Add Event Modal -->
+<div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content radius-16 bg-base">
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="addEventModalLabel">Event Details</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body p-24">
+    <form id="eventForm">
+        <div class="row">
+            <!-- Event Information -->
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Event Title:</label>
+                <input type="text" class="form-control radius-8" id="eventTitle" placeholder="Enter Event Title" required>
+            </div>
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Event Type:</label>
+                <select class="form-control radius-8 form-select" id="eventType" required>
+                    <option selected disabled>Event Type</option>
+                    <option value="In-Person">In-Person</option>
+                    <option value="Virtual">Virtual</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+            </div>
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Speakers Details:</label>
+                <input type="text" class="form-control radius-8" id="speakersDetails" placeholder="Speakers Details" required>
+            </div>
+
+            <!-- Date and Time -->
+            <div class="col-md-6 mb-20">
+                <label for="startDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Start Date / Time:</label>
+                <input class="form-control radius-8" id="startDate" type="datetime-local" required>
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="endDate" class="form-label fw-semibold text-primary-light text-sm mb-8">End Date / Time:</label>
+                <input class="form-control radius-8" id="endDate" type="datetime-local" required>
+            </div>
+
+            <!-- Venue Information -->
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Venue Name:</label>
+                <input type="text" class="form-control radius-8" id="venueName" placeholder="Venue Name" required>
+            </div>
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Street Address:</label>
+                <input type="text" class="form-control radius-8" placeholder="Street Address" required>
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="City" class="form-label fw-semibold text-primary-light text-sm mb-8">City:</label>
+                <input class="form-control radius-8" id="City" type="text" placeholder="City" required>
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="State" class="form-label fw-semibold text-primary-light text-sm mb-8">State:</label>
+                <input class="form-control radius-8" id="State" type="text" placeholder="State" required>
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="Country" class="form-label fw-semibold text-primary-light text-sm mb-8">Country:</label>
+                <select class="form-control radius-8 form-select" id="Country" required>
+                    <option selected disabled>Country</option>
+                    <option>Japan</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                    <option>South Korea</option>
+                    <option>Bangladesh</option>
+                    <option>India</option>
+                    <option>Canada</option>
+                    <option>Nigeria</option>
+                </select>
+            </div>
+
+            <!-- Event URL and Description -->
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Virtual Event URL (if applicable):</label>
+                <input type="text" class="form-control radius-8" placeholder="Virtual Event URL">
+            </div>
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Description:</label>
+                <textarea class="form-control" id="desc" rows="4" placeholder="Write some text"></textarea>
+            </div>
+
+            <!-- Pricing and Sale Information -->
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Currency:</label>
+                <select class="form-control radius-8 form-select" id="PricingCurrency" required>
+                    <option selected disabled>Currency</option>
+                    <option>Rupee</option>
+                    <option>Taka</option>
+                    <option>Dollars</option>
+                    <option>Pounds</option>
+                    <option>Naira</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="price" class="form-label fw-semibold text-primary-light text-sm mb-8">Price:</label>
+                <input class="form-control radius-8" id="price" type="number" placeholder="Price" required>
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="Quantity" class="form-label fw-semibold text-primary-light text-sm mb-8">Quantity:</label>
+                <input class="form-control radius-8" id="Quantity" type="number" placeholder="Quantity" required>
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="saleStartDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Sale Start Date / Time:</label>
+                <input class="form-control radius-8" id="saleStartDate" type="datetime-local" required>
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="saleEndDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Sale End Date / Time:</label>
+                <input class="form-control radius-8" id="saleEndDate" type="datetime-local" required>
+            </div>
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Event Cover Image:</label>
+                <input type="file" class="form-control" id="agenda-upload">
+            </div>
+
+            <!-- Creator Info -->
+            <h5 class="col-12 mb-20">Creator Info</h5>
+            <div class="col-12 mb-20">
+                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Full Name:</label>
+                <input type="text" class="form-control radius-8" placeholder="Enter Full Name">
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="creatorEmail" class="form-label fw-semibold text-primary-light text-sm mb-8">Creator Email:</label>
+                <input class="form-control radius-8" id="creatorEmail" type="email" placeholder="Creator Email">
+            </div>
+            <div class="col-md-6 mb-20">
+                <label for="creatorNumber" class="form-label fw-semibold text-primary-light text-sm mb-8">Creator Number:</label>
+                <input class="form-control radius-8" id="creatorNumber" type="text" placeholder="Creator Number">
+            </div>
+
+       
+            <div class="d-flex align-items-center justify-content-center gap-3 mt-24">
+                <button type="reset" class="btn btn-secondary">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- Success/Error Modal -->
+<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="feedbackModalLabel">Event Submission</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body p-24">
-                <form action="#">
-                    <div class="row">
-                        <div class="col-12 mb-20">
-                            <label class="form-label fw-semibold text-primary-light text-sm mb-8">Event Title : </label>
-                            <input type="text" class="form-control radius-8" placeholder="Enter Event Title ">
-                        </div>
-                        <div class="col-12 mb-20">
-                            <label class="form-label fw-semibold text-primary-light text-sm mb-8">Event Type : </label>
-                            <select class="form-control radius-8 form-select" id="currencyTwo">
-                                <option selected disabled>Event Type</option>
-                                <option>In-Person</option>
-                                <option>Virtual</option>
-                                <option>Hybrid</option>
-                            </select>
-                        </div>
-                        
-                        <div class="col-12 mb-20">
-                            <label class="form-label fw-semibold text-primary-light text-sm mb-8">Speakers Details </label>
-                            <input type="text" class="form-control radius-8" placeholder="Speakers Details ">
-                        </div>
-
-                        <div class="col-md-6 mb-20">
-                            <label for="startDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Start Date / Time</label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="startDate" type="text" placeholder="03/12/2024, 10:30 AM">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    <iconify-icon icon="solar:calendar-linear" class="icon text-lg"></iconify-icon>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-20">
-                            <label for="endDate" class="form-label fw-semibold text-primary-light text-sm mb-8">End Date / Time </label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="endDate" type="text" placeholder="03/12/2024, 2:30 PM">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    <iconify-icon icon="solar:calendar-linear" class="icon text-lg"></iconify-icon>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-20">
-                            <label for="VenueName" class="form-label fw-semibold text-primary-light text-sm mb-8">Venue Name</label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="Venue Name" type="text" placeholder="Venue Name">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-20">
-                            <label for="Country" class="form-label fw-semibold text-primary-light text-sm mb-8">Country </label>
-                            <div class=" position-relative">
-                                <select class="form-control radius-8 form-select" id="Country">
-                                    <option selected disabled>Country</option>
-                                    <option>Japan</option>
-                                    <option>France</option>
-                                    <option>Germany</option>
-                                    <option>South Korea</option>
-                                    <option>Bangladesh</option>
-                                    <option>India</option>
-                                    <option>Canada</option>
-                                    <option>Nigeria</option>
-                                </select>
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-12 mb-20">
-                            <label class="form-label fw-semibold text-primary-light text-sm mb-8">Street Address : </label>
-                            <input type="text" class="form-control radius-8" placeholder="Street Address">
-                        </div>
-
-                        <div class="col-md-6 mb-20">
-                            <label for="startDate" class="form-label fw-semibold text-primary-light text-sm mb-8">City</label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="City" type="text" placeholder="City">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-20">
-                            <label for="endDate" class="form-label fw-semibold text-primary-light text-sm mb-8">State </label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="State" type="text" placeholder="State">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-12 mb-20">
-                            <label class="form-label fw-semibold text-primary-light text-sm mb-8">Virtual Event URL (if applicable) </label>
-                            <input type="text" class="form-control radius-8" placeholder="Virtual Event URL ">
-                        </div>
-
-                        <div class="row gy-4">
-                            <div class="col-md-6">
-                                <div class="card h-100 p-0">
-                                    <div class="card-header border-bottom bg-base py-16 px-24">
-                                        <label class="form-label fw-semibold text-primary-light text-sm mb-8">Agenda </label>
-                                    </div>
-                                    <div class="card-body p-24">
-                                        <label for="basic-upload" class="border border-primary-600 fw-medium text-primary-600 px-16 py-12 radius-12 d-inline-flex align-items-center gap-2 bg-hover-primary-50">
-                                            <iconify-icon icon="solar:upload-linear" class="text-xl"></iconify-icon>
-                                            Click to upload
-                                        </label>
-                                        <input type="file" class="form-control w-auto mt-24 form-control-lg" id="basic-upload">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>    
-                        
-
-                        <div class="col-12 mb-20">
-                            <label for="endDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Label </label>
-                            <div class="d-flex align-items-center flex-wrap gap-28">
-                                <div class="form-check checked-success d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="Personal">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="Personal">
-                                        <span class="w-8-px h-8-px bg-success-600 rounded-circle"></span>
-                                        Personal
-                                    </label>
-                                </div>
-                                <div class="form-check checked-primary d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="Business">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="Business">
-                                        <span class="w-8-px h-8-px bg-primary-600 rounded-circle"></span>
-                                        Business
-                                    </label>
-                                </div>
-                                <div class="form-check checked-warning d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="Family">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="Family">
-                                        <span class="w-8-px h-8-px bg-warning-600 rounded-circle"></span>
-                                        Family
-                                    </label>
-                                </div>
-                                <div class="form-check checked-secondary d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="Important">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="Important">
-                                        <span class="w-8-px h-8-px bg-lilac-600 rounded-circle"></span>
-                                        Important
-                                    </label>
-                                </div>
-                                <div class="form-check checked-danger d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="Holiday">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="Holiday">
-                                        <span class="w-8-px h-8-px bg-danger-600 rounded-circle"></span>
-                                        Holiday
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 mb-20">
-                            <label class="form-label fw-semibold text-primary-light text-sm mb-8">Pricing : </label>
-                            <select class="form-control radius-8 form-select" id="Pricing / Currency">
-                                <option selected disabled>Currency</option>
-                                <option>Rupee</option>
-                                <option>Taka</option>
-                                <option>Dollars</option>
-                                <option>Pounds</option>
-                                <option>Naria</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-6 mb-20">
-                            <label for="startDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Price :</label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="price" type="number" placeholder="price">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                   
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-20">
-                            <label for="endDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Quantity : </label>
-                            <div class=" position-relative">
-                                
-                                <input class="form-control radius-8 bg-base" id="Quantity" type="number" placeholder="Quantity">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                   
-                                </span>
-                            </div>
-                        </div>
-
-                        
-
-                        <div class="col-md-6 mb-20">
-                            <label for="startDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Sale Start Date / Time</label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="startDate" type="text" placeholder="03/12/2024, 10:30 AM">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    <iconify-icon icon="solar:calendar-linear" class="icon text-lg"></iconify-icon>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-20">
-                            <label for="endDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Sale End Date / Time </label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="endDate" type="text" placeholder="03/12/2024, 2:30 PM">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    <iconify-icon icon="solar:calendar-linear" class="icon text-lg"></iconify-icon>
-                                </span>
-                            </div>
-                        </div>
-
-
-                        
-
-                        <div class="col-12 mb-20">
-                            <label for="desc" class="form-label fw-semibold text-primary-light text-sm mb-8">Description</label>
-                            <textarea class="form-control" id="desc" rows="4" cols="50" placeholder="Write some text"></textarea>
-                        </div>
-
-                        <h5>Creator Info</h5>
-
-                        <div class="col-12 mb-20">
-                            <label class="form-label fw-semibold text-primary-light text-sm mb-8">Full Name : </label>
-                            <input type="text" class="form-control radius-8" placeholder="Enter Full Name ">
-                        </div>
-
-                        <div class="col-md-6 mb-20">
-                            <label for="startDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Creator Email</label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="Creator Email" type="email" placeholder="Creator Email">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-20">
-                            <label for="endDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Creator Number </label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="State" type="email" placeholder="Creator Number">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="row gy-4">
-                            <div class="col-md-6">
-                                <div class="card h-100 p-0">
-                                    <div class="card-header border-bottom bg-base py-16 px-24">
-                                        <h6 class="text-lg fw-semibold mb-0">Event Cover Image</h6>
-                                    </div>
-                                    <div class="card-body p-24">
-                                        <label for="basic-upload" class="border border-primary-600 fw-medium text-primary-600 px-16 py-12 radius-12 d-inline-flex align-items-center gap-2 bg-hover-primary-50">
-                                            <iconify-icon icon="solar:upload-linear" class="text-xl"></iconify-icon>
-                                            Click to upload
-                                        </label>
-                                        <input type="file" class="form-control w-auto mt-24 form-control-lg" id="basic-upload">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card h-100 p-0">
-                                    <div class="card-header border-bottom bg-base py-16 px-24">
-                                        <h6 class="text-lg fw-semibold mb-0">Event Logo</h6>
-                                    </div>
-                                    <div class="card-body p-24">
-                                        <div class="upload-image-wrapper d-flex align-items-center gap-3">
-                                            <div class="uploaded-img d-none position-relative h-120-px w-120-px border input-form-light radius-8 overflow-hidden border-dashed bg-neutral-50">
-                                                <button type="button" class="uploaded-img__remove position-absolute top-0 end-0 z-1 text-2xxl line-height-1 me-8 mt-8 d-flex">
-                                                    <iconify-icon icon="radix-icons:cross-2" class="text-xl text-danger-600"></iconify-icon>
-                                                </button>
-                                                <img id="uploaded-img__preview" class="w-100 h-100 object-fit-cover" src="assets/images/user.html" alt="image">
-                                            </div>
-                    
-                                            <label class="upload-file h-120-px w-120-px border input-form-light radius-8 overflow-hidden border-dashed bg-neutral-50 bg-hover-neutral-200 d-flex align-items-center flex-column justify-content-center gap-1" for="upload-file">
-                                                <iconify-icon icon="solar:camera-outline" class="text-xl text-secondary-light"></iconify-icon>
-                                                <span class="fw-semibold text-secondary-light">Upload</span>
-                                                <input id="upload-file" type="file" hidden>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 mb-20">
-                                <label class="form-label fw-semibold text-primary-light text-sm mb-8">Code of Coduct : </label>
-                                <input type="text" class="form-control radius-8" placeholder="Code of Coduct ">
-                            </div>
-
-                        <div class="d-flex align-items-center justify-content-center gap-3 mt-24">
-                            <button type="reset" class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-40 py-11 radius-8">
-                                Cancel
-                            </button>
-                            <button type="submit" class="btn btn-primary border border-primary-600 text-md px-24 py-12 radius-8">
-                                Save
-                            </button>
-                        </div>
-                    </div>
-                </form>
+            <div class="modal-body">
+                <p id="feedbackMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Modal View Event -->
-<div class="modal fade" id="exampleModalView" tabindex="-1" aria-labelledby="exampleModalViewLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered">
+<div class="modal fade" id="viewEventModal" tabindex="-1" aria-labelledby="viewEventModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content radius-16 bg-base">
-            <div class="modal-header py-16 px-24 border border-top-0 border-start-0 border-end-0">
-                <h1 class="modal-title fs-5" id="exampleModalViewLabel">View Details</h1>
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="viewEventModalLabel">View Event Details</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body p-24">
-                <div class="mb-12">
-                    <span class="text-secondary-light txt-sm fw-medium">Title</span>
-                    <h6 class="text-primary-light fw-semibold text-md mb-0 mt-4">Design Conference</h6>
-                </div>
-                <div class="mb-12">
-                    <span class="text-secondary-light txt-sm fw-medium">Start Date</span>
-                    <h6 class="text-primary-light fw-semibold text-md mb-0 mt-4">25 Jan 2024, 10:30AM</h6>
-                </div>
-                <div class="mb-12">
-                    <span class="text-secondary-light txt-sm fw-medium">End Date</span>
-                    <h6 class="text-primary-light fw-semibold text-md mb-0 mt-4">25 Jan 2024, 2:30AM</h6>
-                </div>
-                <div class="mb-12">
-                    <span class="text-secondary-light txt-sm fw-medium">Description</span>
-                    <h6 class="text-primary-light fw-semibold text-md mb-0 mt-4">N/A</h6>
-                </div>
-                <div class="mb-12">
-                    <span class="text-secondary-light txt-sm fw-medium">Label</span>
-                    <h6 class="text-primary-light fw-semibold text-md mb-0 mt-4 d-flex align-items-center gap-2">
-                        <span class="w-8-px h-8-px bg-success-600 rounded-circle"></span>
-                        Business
-                    </h6>
-                </div>
+            <div class="modal-body" id="viewEventDetails">
+                <!-- Dynamic content will be populated here -->
             </div>
         </div>
     </div>
 </div>
 
 <!-- Modal Edit Event -->
-<div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalEditLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered">
+<div class="modal fade" id="editEventModal" tabindex="-1" aria-labelledby="editEventModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content radius-16 bg-base">
-            <div class="modal-header py-16 px-24 border border-top-0 border-start-0 border-end-0">
-                <h1 class="modal-title fs-5" id="exampleModalEditLabel">Edit Event</h1>
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="editEventModalLabel">Edit Event</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body p-24">
-                <form action="#">
+            <div class="modal-body">
+                <form id="editEventForm">
                     <div class="row">
+                        <input type="hidden" id="editEventId">
                         <div class="col-12 mb-20">
-                            <label class="form-label fw-semibold text-primary-light text-sm mb-8">Event Title : </label>
-                            <input type="text" class="form-control radius-8" placeholder="Enter Event Title ">
+                            <label class="form-label">Event Title:</label>
+                            <input type="text" class="form-control" id="editEventTitle" required>
+                        </div>
+                        <div class="col-12 mb-20">
+                            <label class="form-label">Event Type:</label>
+                            <select class="form-control" id="editEventType" required>
+                                <option selected disabled>Select Event Type</option>
+                                <option value="In-Person">In-Person</option>
+                                <option value="Virtual">Virtual</option>
+                                <option value="Hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                        <div class="col-12 mb-20">
+                            <label class="form-label">Speakers Details:</label>
+                            <input type="text" class="form-control" id="editSpeakers" required>
                         </div>
                         <div class="col-md-6 mb-20">
-                            <label for="editstartDate" class="form-label fw-semibold text-primary-light text-sm mb-8">Start Date</label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="editstartDate" type="text" placeholder="03/12/2024, 10:30 AM">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    <iconify-icon icon="solar:calendar-linear" class="icon text-lg"></iconify-icon>
-                                </span>
-                            </div>
+                            <label class="form-label">Start Date / Time:</label>
+                            <input type="datetime-local" class="form-control" id="editStartDate" required>
                         </div>
                         <div class="col-md-6 mb-20">
-                            <label for="editendDate" class="form-label fw-semibold text-primary-light text-sm mb-8">End Date </label>
-                            <div class=" position-relative">
-                                <input class="form-control radius-8 bg-base" id="editendDate" type="text" placeholder="03/12/2024, 2:30 PM">
-                                <span class="position-absolute end-0 top-50 translate-middle-y me-12 line-height-1">
-                                    <iconify-icon icon="solar:calendar-linear" class="icon text-lg"></iconify-icon>
-                                </span>
-                            </div>
+                            <label class="form-label">End Date / Time:</label>
+                            <input type="datetime-local" class="form-control" id="editEndDate" required>
+                        </div>
+                        
+                        <div class="col-12 mb-20">
+                            <label class="form-label">Venue Name:</label>
+                            <input type="text" class="form-control" id="editVenue" required>
                         </div>
                         <div class="col-12 mb-20">
-                            <label class="form-label fw-semibold text-primary-light text-sm mb-8">Label </label>
-                            <div class="d-flex align-items-center flex-wrap gap-28">
-                                <div class="form-check checked-success d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="editPersonal">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="editPersonal">
-                                        <span class="w-8-px h-8-px bg-success-600 rounded-circle"></span>
-                                        Personal
-                                    </label>
-                                </div>
-                                <div class="form-check checked-primary d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="editBusiness">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="editBusiness">
-                                        <span class="w-8-px h-8-px bg-primary-600 rounded-circle"></span>
-                                        Business
-                                    </label>
-                                </div>
-                                <div class="form-check checked-warning d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="editFamily">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="editFamily">
-                                        <span class="w-8-px h-8-px bg-warning-600 rounded-circle"></span>
-                                        Family
-                                    </label>
-                                </div>
-                                <div class="form-check checked-secondary d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="editImportant">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="editImportant">
-                                        <span class="w-8-px h-8-px bg-lilac-600 rounded-circle"></span>
-                                        Important
-                                    </label>
-                                </div>
-                                <div class="form-check checked-danger d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="radio" name="label" id="editHoliday">
-                                    <label class="form-check-label line-height-1 fw-medium text-secondary-light text-sm d-flex align-items-center gap-1" for="editHoliday">
-                                        <span class="w-8-px h-8-px bg-danger-600 rounded-circle"></span>
-                                        Holiday
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 mb-20">
-                            <label for="desc" class="form-label fw-semibold text-primary-light text-sm mb-8">Description</label>
-                            <textarea class="form-control" id="editdesc" rows="4" cols="50" placeholder="Write some text"></textarea>
+                            <label class="form-label">Description:</label>
+                            <textarea class="form-control" id="editDesc" rows="4" required></textarea>
                         </div>
 
                         <div class="d-flex align-items-center justify-content-center gap-3 mt-24">
-                            <button type="reset" class="border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-40 py-11 radius-8">
-                                Cancel
-                            </button>
-                            <button type="submit" class="btn btn-primary border border-primary-600 text-md px-24 py-12 radius-8">
-                                Save
-                            </button>
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </div>
                 </form>
@@ -1121,44 +630,38 @@
 </div>
 
 <!-- Modal Delete Event -->
-<div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-dialog modal-dialog-centered">
+<div class="modal fade" id="deleteEventModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
         <div class="modal-content radius-16 bg-base">
             <div class="modal-body p-24 text-center">
-                <span class="mb-16 fs-1 line-height-1 text-danger">
-                    <iconify-icon icon="fluent:delete-24-regular" class="menu-icon"></iconify-icon>
-                </span>
-                <h6 class="text-lg fw-semibold text-primary-light mb-0">Are your sure you want to delete this event</h6>
+                <h6 class="text-lg fw-semibold text-primary-light mb-0">Are you sure you want to delete this event?</h6>
                 <div class="d-flex align-items-center justify-content-center gap-3 mt-24">
-                    <button type="reset" class="w-50 border border-danger-600 bg-hover-danger-200 text-danger-600 text-md px-40 py-11 radius-8">
-                        Cancel
-                    </button>
-                    <button type="button" class="w-50 btn btn-primary border border-primary-600 text-md px-24 py-12 radius-8">
-                        Delete
-                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteEvent">Delete</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-        
-        </div>
-        <!-- ..::  footer  start ::.. -->
-        <footer class="d-footer">
-    <div class="row align-items-center justify-content-between">
-        <div class="col-auto">
-            <p class="mb-0">Copyright © 2025 ConfX All Rights Reserved. Final Year Project</p>
-        </div>
-        <div class="col-auto">
-            <p class="mb-0">Made by <span class="text-primary-600">Olumide</span></p>
-        </div>
-    </div>
-</footer>        <!-- ..::  footer area end ::.. -->
+</div>
 
+<!-- Footer -->
+<footer class="d-footer">
+<div class="row align-items-center justify-content-between">
+    <div class="col-auto">
+        <p class="mb-0">Copyright © 2025 ConfX All Rights Reserved. Final Year Project</p>
+    </div>
+    <div class="col-auto">
+        <p class="mb-0">Made by <span class="text-primary-600">Olumide</span></p>
+    </div>
+</div>
+</footer>
     </main>
 
-    <!-- ..::  scripts  start ::.. -->
+    
+    <!-- Scripts -->
+   <!-- ..::  scripts  start ::.. -->
     <!-- jQuery library js -->
     <script src="../assets/js/lib/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap js -->
@@ -1187,27 +690,212 @@
 
     <!-- main js -->
     <script src="../assets/js/app.js"></script>
-    &lt;script src=&quot;https://laravel.wowdash.wowtheme7.com/assets/js/full-calendar.js&quot;&gt;&lt;/script&gt;
-           &lt;script src=&quot;https://laravel.wowdash.wowtheme7.com/assets/js/flatpickr.js.js&quot;&gt;&lt;/script&gt;
-                    &lt;script&gt;
-                    // Flat pickr or date picker js 
-                    function getDatePicker(receiveID) {
-                        flatpickr(receiveID, {
-                            enableTime: true,
-                            dateFormat: &quot;d/m/Y H:i&quot;,
-                        });
-                    }
-                    getDatePicker(&quot;#startDate&quot;);
-                    getDatePicker(&quot;#endDate&quot;);
+    <script src="https://laravel.wowdash.wowtheme7.com/assets/js/homeFiveChart.js"></script>
+    
+   <script>
+    let currentEventId = null;
 
-                    getDatePicker(&quot;#editstartDate&quot;);
-                    getDatePicker(&quot;#editendDate&quot;);
-                    &lt;/script&gt;
+// Event submission
+document.getElementById('eventForm').addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent default form submission
 
-    <!-- ..::  scripts  end ::.. -->
+    
 
+    const formData = {
+        title: document.getElementById('eventTitle').value,
+        type: document.getElementById('eventType').value,
+        speakers: document.getElementById('speakersDetails').value,
+        startDate: document.getElementById('startDate').value,
+        endDate: document.getElementById('endDate').value,
+        venueName: document.getElementById('venueName').value,
+        streetAddress: document.querySelector('input[placeholder="Street Address"]').value,
+        city: document.getElementById('City').value,
+        state: document.getElementById('State').value,
+        country: document.getElementById('Country').value,
+        virtualUrl: document.querySelector('input[placeholder="Virtual Event URL"]').value,
+        description: document.getElementById('desc').value,
+        pricingCurrency: document.getElementById('PricingCurrency').value,
+        price: document.getElementById('price').value,
+        quantity: document.getElementById('Quantity').value,
+        saleStartDate: document.getElementById('saleStartDate').value,
+        saleEndDate: document.getElementById('saleEndDate').value,
+        agenda: document.getElementById('agenda-upload').files[0],
+        creatorName: document.querySelector('input[placeholder="Enter Full Name"]').value,
+        creatorEmail: document.getElementById('creatorEmail').value,
+        creatorNumber: document.getElementById('creatorNumber').value,
+        approved: false // Default to false on creation
+    };
+
+    // Check if we are editing an existing event
+    if (currentEventId !== null) {
+        // Update existing event
+        updateEventInLocal(currentEventId, formData);
+        showFeedbackModal("Event updated successfully!");
+    } else {
+        // Save new event to local storage
+        saveEventToLocal(formData);
+        showFeedbackModal("Event created successfully!");
+    }
+
+    // Fetch and display events
+    fetchEventsFromLocal();
+
+    // Reset the form and hide modal
+    event.target.reset();
+    $('#addEventModal').modal('hide'); // Hide the modal
+});
+
+// Function to save event to local storage
+function saveEventToLocal(eventData) {
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+    events.push(eventData);
+    localStorage.setItem('events', JSON.stringify(events));
+}
+
+// Function to update an existing event
+function updateEventInLocal(index, eventData) {
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+    events[index] = eventData; // Update the event at the specified index
+    localStorage.setItem('events', JSON.stringify(events)); // Save updated events
+}
+
+// Function to fetch events from local storage and display them
+function fetchEventsFromLocal() {
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+    const eventsContainer = document.getElementById('eventsContainer');
+    eventsContainer.innerHTML = ''; // Clear previous events
+
+    events.forEach((event, index) => {
+        const startDateTime = new Date(event.startDate).toLocaleString();
+        const colorClass = getColorClass(event.type);
+        
+        const eventItem = document.createElement('div');
+        eventItem.className = 'event-item d-flex align-items-center justify-content-between gap-4 pb-16 mb-16 border border-start-0 border-end-0 border-top-0';
+        eventItem.innerHTML = `
+            <div class="">
+                <span class="w-12-px h-12-px ${colorClass} rounded-circle fw-medium"></span>
+                <span class="text-primary-light fw-semibold text-md mt-4">${event.title}</span>
+                <div class="text-secondary-light">${startDateTime}</div>
+            </div>
+            <div class="dropdown">
+                <button type="button" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-link">
+                    <iconify-icon icon="entypo:dots-three-vertical" class="icon text-secondary-light"></iconify-icon>
+                </button>
+                <ul class="dropdown-menu p-12 border bg-base shadow">
+                    <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center" onclick="viewEvent(${index})">
+                            <iconify-icon icon="hugeicons:view" class="icon text-lg line-height-1"></iconify-icon> View
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center" onclick="editEvent(${index})">
+                            <iconify-icon icon="lucide:edit" class="icon text-lg line-height-1"></iconify-icon> Edit
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="delete-item dropdown-item d-flex align-items-center" onclick="confirmDeleteEvent(${index})">
+                            <iconify-icon icon="fluent:delete-24-regular" class="icon text-lg line-height-1"></iconify-icon> Delete
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        `;
+        eventsContainer.appendChild(eventItem);
+    });
+}
+
+// Show feedback modal
+function showFeedbackModal(message) {
+    document.getElementById('feedbackMessage').innerText = message;
+    $('#feedbackModal').modal('show');
+}
+
+// Get color class based on event type
+function getColorClass(eventType) {
+    switch (eventType) {
+        case 'In-Person':
+            return 'bg-success-600'; // Green for In-Person
+        case 'Virtual':
+            return 'bg-primary-600'; // Blue for Virtual
+        case 'Hybrid':
+            return 'bg-warning-600'; // Yellow for Hybrid
+        default:
+            return 'bg-secondary-600'; // Default color
+    }
+}
+
+// View event details
+function viewEvent(index) {
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+    const event = events[index];
+    const modal = document.getElementById('viewEventDetails');
+    modal.innerHTML = `
+        <p><strong>Title:</strong> ${event.title}</p>
+        <p><strong>Type:</strong> ${event.type}</p>
+        <p><strong>Speakers:</strong> ${event.speakers}</p>
+        <p><strong>Start Date:</strong> ${new Date(event.startDate).toLocaleString()}</p>
+        <p><strong>End Date:</strong> ${new Date(event.endDate).toLocaleString()}</p>
+        <p><strong>Venue:</strong> ${event.venueName}</p>
+        <p><strong>Street Address:</strong> ${event.streetAddress}</p>
+        <p><strong>City:</strong> ${event.city}</p>
+        <p><strong>State:</strong> ${event.state}</p>
+        <p><strong>Country:</strong> ${event.country}</p>
+        <p><strong>Virtual URL:</strong> ${event.virtualUrl}</p>
+        <p><strong>Pricing Currency:</strong> ${event.pricingCurrency}</p>
+        <p><strong>Price:</strong> ${event.price}</p>
+        <p><strong>Quantity:</strong> ${event.quantity}</p>
+        <p><strong>Description:</strong> ${event.description}</p>
+    `;
+    $('#viewEventModal').modal('show');
+}
+
+// Edit event
+function editEvent(index) {
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+    const event = events[index];
+    document.getElementById('eventTitle').value = event.title;
+    document.getElementById('eventType').value = event.type;
+    document.getElementById('speakersDetails').value = event.speakers;
+    document.getElementById('startDate').value = event.startDate;
+    document.getElementById('endDate').value = event.endDate;
+    document.getElementById('venueName').value = event.venueName;
+    document.querySelector('input[placeholder="Street Address"]').value = event.streetAddress;
+    document.getElementById('City').value = event.city;
+    document.getElementById('State').value = event.state;
+    document.getElementById('Country').value = event.country;
+    document.querySelector('input[placeholder="Virtual Event URL"]').value = event.virtualUrl;
+    document.getElementById('desc').value = event.description;
+    document.getElementById('PricingCurrency').value = event.pricingCurrency;
+    document.getElementById('price').value = event.price;
+    document.getElementById('Quantity').value = event.quantity;
+    document.getElementById('saleStartDate').value = event.saleStartDate;
+    document.getElementById('saleEndDate').value = event.saleEndDate;
+
+    // Store the index for later use
+    currentEventId = index;
+
+    // Show modal for editing
+    $('#addEventModal').modal('show');
+}
+
+// Confirm delete event
+function confirmDeleteEvent(index) {
+    currentEventId = index;
+    $('#deleteEventModal').modal('show');
+}
+
+// Delete event
+document.getElementById('confirmDeleteEvent').addEventListener('click', () => {
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+    events.splice(currentEventId, 1); // Remove the event
+    localStorage.setItem('events', JSON.stringify(events)); // Update local storage
+    fetchEventsFromLocal(); // Refresh the events list
+    $('#deleteEventModal').modal('hide');
+    showFeedbackModal("Event deleted successfully.");
+});
+
+// Initial fetch on page load
+fetchEventsFromLocal();
+   </script>
 </body>
-
-
-<!-- Mirrored from laravel.wowdash.wowtheme7.com/componentspage/calendar by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 27 Oct 2024 23:28:59 GMT -->
 </html>

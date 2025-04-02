@@ -238,6 +238,20 @@
             </div>
         </div>
     </div>
+
+   <!-- Success Message Modal -->
+<div class="modal" id="successModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.5);">
+    <div style="max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); position: relative; top: 20%;">
+        <span style="color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer;" id="closeSuccessModal">&times;</span>
+        <h2 style="font-size: 20px; color: #333;" id="successMessage">Event Added to Cart</h2>
+        <p>Check your cart for details.</p>
+        <div style="text-align: center;">
+            <button style="padding: 10px 20px; background-color: #3500fc; color: white; border: none; border-radius: 5px; cursor: pointer;" id="okButton">OK</button>
+        </div>
+    </div>
+</div>
+
+
 </section>
 <!-- MORE INFORMATION SECTION -->
 <section class="more_information_section w-100 float-left">
@@ -626,54 +640,71 @@
 <script>
     let quantity = 1;
 
-    function increaseValue(button) {
-        quantity++;
+function increaseValue(button) {
+    quantity++;
+    document.getElementById("quantity").innerText = quantity;
+}
+
+function decreaseValue(button) {
+    if (quantity > 1) {
+        quantity--;
         document.getElementById("quantity").innerText = quantity;
     }
+}
 
-    function decreaseValue(button) {
-        if (quantity > 1) {
-            quantity--;
-            document.getElementById("quantity").innerText = quantity;
-        }
-    }
+function addToCart() {
+    const title = document.querySelector('.heading h3').innerText; // Get title dynamically
+    const price = parseFloat(document.getElementById("event-price").innerText);
+    const image = "assets/images/ai event.jpg"; // Replace with actual image path
+    const total = (price * quantity).toFixed(2);
 
-    function addToCart() {
-        const title = document.querySelector('.heading h3').innerText; // Get title dynamically
-        const price = parseFloat(document.getElementById("event-price").innerText);
-        const image = "assets/images/ai event.jpg"; // Replace with actual image path
-        const total = (price * quantity).toFixed(2);
+    const cartItem = {
+        title: title,
+        price: price,
+        quantity: quantity,
+        total: total,
+        image: image
+    };
 
-        const cartItem = {
-            title: title,
-            price: price,
-            quantity: quantity,
-            total: total,
-            image: image
-        };
+    // Get existing cart items or create a new array
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    cartItems.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
 
-        // Get existing cart items or create a new array
-        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        cartItems.push(cartItem);
-        localStorage.setItem('cart', JSON.stringify(cartItems));
+    // Update cart count
+    updateCartCount();
 
-        // Update cart count
-        updateCartCount();
+    // Show success modal with the event name
+    showSuccessModal(title);
+}
 
-        // Show alert and redirect to cart
-        alert(`${title} has been added to your cart.`);
-        window.location.href = '/cart.html'; // Redirect to the cart page
-    }
-
-    function updateCartCount() {
+function updateCartCount() {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     const cartCount = cartItems.length; // Count the number of unique items
     document.getElementById('cart-count').innerText = cartCount; // Update the cart count display
 }
 
+// Function to show the success modal with a dynamic message
+function showSuccessModal(eventName) {
+    document.getElementById('successMessage').innerText = `${eventName} has been added to your cart successfully!`;
+    document.getElementById('successModal').style.display = 'block';
+}
+
+// Close success modal
+document.getElementById('closeSuccessModal').onclick = function() {
+    document.getElementById('successModal').style.display = 'none';
+};
+
+// Close success modal on OK button click
+document.getElementById('okButton').onclick = function() {
+    document.getElementById('successModal').style.display = 'none';
+    window.location.href = '/cart.html'; // Redirect to the cart page if needed
+};
+
 // Call updateCartCount on page load
 document.addEventListener('DOMContentLoaded', updateCartCount);
 </script>
+
 </body>
 
 <!-- Mirrored from html.designingmedia.com/confx/product-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Oct 2024 14:16:40 GMT -->

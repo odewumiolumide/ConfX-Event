@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="styles/style.css"> <!-- Optional CSS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js" defer></script> <!-- Link to your JS file -->
+</head>
+<body>
+    <section class="nft-section checkout-section w-100 float-left padding-top padding-bottom" id="checkout_section">
+        <form id="checkout-form">
+            <div class="container">
+                <div class="row" data-aos="fade-up" data-aos-duration="700">
+                    <div class="col-lg-8 col-md-7 col-12 mb-md-0 mb-4">
+                        <h3 class="mb-lg-4 mb-3">Billing details</h3>
+                        <div class="create-nft-box float-left w-100 position-relative">
+                            <div class="form-group">
+                                <label>First name *</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last name *</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-group special">
+                                <label>Phone *</label>
+                                <input type="number" class="form-control" id="phone" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group special">
+                                <label>Email address *</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group special">
+                                <label>Country / Region *</label>
+                                <select class="form-control" id="country" required>
+                                    <option value="" disabled selected>Select your country</option>
+                                    <option>Afghanistan</option>
+                                </select>
+                            </div>
+                            <div class="form-group special">
+                                <label>State *</label>
+                                <input type="text" class="form-control" id="state" placeholder="State" required>
+                            </div>
+                            <div class="form-group special">
+                                <label>Street address *</label>
+                                <input type="text" class="form-control" id="address" placeholder="Street Address" required>
+                            </div>
+                            <div class="form-group special">
+                                <label>Postcode / ZIP *</label>
+                                <input type="number" class="form-control" id="postcode" placeholder="Postcode" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-12">
+                        <h3 class="mb-lg-4 mb-3">Your order</h3>
+                        <div class="preview-box">
+                            <div class="product-outer">
+                                <span>Product</span>
+                            </div>
+                            <div id="product-list"></div>
+                            <div class="product-outer">
+                                <span>Subtotal</span>
+                                <span class="float-right total" id="subtotal">0.00 $</span>
+                            </div>
+                            <div class="shipping-outer">
+                                <span class="shipping">Shipping</span>
+                                <span class="price">Flat Rate: 9.00 $</span>
+                            </div>
+                            <div class="checkout-container">
+                                <h6>Payment Method</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod1" value="free">
+                                    <label class="form-check-label" for="paymentMethod1">FREE</label>
+                                    <p class="info-text">This option is available for free events only.</p>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod2" value="directTransfer">
+                                    <label class="form-check-label" for="paymentMethod2">Stripe Payment</label>
+                                    <p class="info-text">Make your payment using Stripe</p>
+                                </div>
+                                <div id="total-cost">Total Cost: $0.00</div>
+                            </div>
+                            <div class="btn-outer">
+                                <button id="checkout" type="button" class="default-btn hover-effect" disabled>Register Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Event Confirmation Modal -->
+        <div class="modal" id="confirmationModal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>Event Confirmation</h2>
+                <p><strong>Event Name:</strong> <span id="eventName"></span></p>
+                <p><strong>Date/Time:</strong> <span id="eventDate"></span></p>
+                <p><strong>Location:</strong> <span id="eventLocation"></span></p>
+                <p><strong>User ID:</strong> <span id="userId"></span></p>
+                <p><strong>Type:</strong> Free Pass</p>
+                <p><strong>Price:</strong> $0.00</p>
+                <p><strong>Attendee:</strong> <span id="attendeeName"></span></p>
+                <p><strong>Payment Status:</strong> Success</p>
+                <p><strong>Phone:</strong> <span id="phoneDisplay"></span></p>
+                <div class="btn-outer">
+                    <button id="print-button" onclick="printAndHide();">Print</button>
+                    <button id="download-button" onclick="downloadPDF();">Download PDF</button>
+                    <button id="share-button" onclick="shareEvent();">Share</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="/assets/js/custom.js"></script>
+</body>
+</html>
