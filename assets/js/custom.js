@@ -314,10 +314,9 @@ document.getElementById('closeModal').onclick = function() {
 document.addEventListener('DOMContentLoaded', populateCheckout);
 
 function generateInvoice() {
-  // Fetch values from the modal
-  const firstName = document.getElementById('userFirstName').innerText; // Use innerText
-  const lastName = document.getElementById('userLastName').innerText; // Use innerText
-  const phone = document.getElementById('userPhone').innerText; // Use innerText
+  const firstName = document.getElementById('userFirstName').innerText;
+  const lastName = document.getElementById('userLastName').innerText;
+  const phone = document.getElementById('userPhone').innerText;
   const eventDetails = window.eventDetails; // Assuming this object exists
   const ticketNumber = document.getElementById('userId').innerText; // Get the ticket number generated in the modal
   const paymentStatus = "Success"; // Set payment status
@@ -328,7 +327,7 @@ function generateInvoice() {
       <div style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9;">
           <div style="max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
               <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2c3e50; padding-bottom: 20px;">
-                  <img src="/assets/images/favicon/favicon-96x96.png" alt="" >
+                  <img src="/assets/images/favicon/favicon-96x96.png" alt="Logo">
                   <div style="text-align: right;">
                       <h1>Conf-X-Event</h1>
                       <p>121 King Street Melbourne, 3000, Australia</p>
@@ -336,7 +335,7 @@ function generateInvoice() {
                   </div>
               </div>
               <div style="margin: 20px 0;">
-                  <h2 style="font-size: 20px; color: #333; margin: 0;">TICKET</h2>
+                  
                   <p><strong>Ticket Date:</strong> ${new Date().toLocaleDateString()}</p>
                   <p><strong>Ticket Number:</strong> ${ticketNumber}</p>
               </div>
@@ -384,12 +383,10 @@ function generateInvoice() {
                           <td style="border: 1px solid #ccc; padding: 10px; font-weight: bold;">$${totalCost}</td>
                       </tr>
                   </table>
+                  <div id="qrcode" style="margin-top: 20px;"></div>
               </div>
               <div style="margin-top: 20px; text-align: center; font-size: 12px;">
-                  <p>Thank you for registering!</p>
-              </div>
-              <div style="margin-top: 20px; font-size: 12px;">
-                  <p>Terms: Please keep this email for your records.</p>
+                  <p>Thank you for registering! Terms: Please keep this email for your records.</p>
               </div>
           </div>
       </div>
@@ -399,6 +396,16 @@ function generateInvoice() {
   const win = window.open('', '', 'height=800,width=800');
   win.document.write(invoiceHTML);
   win.document.close();
+
+  // Generate QR code
+  $(win.document).ready(function() {
+      $(win.document.getElementById('qrcode')).qrcode({
+          text: `Ticket Number: ${ticketNumber}\nAttendee: ${firstName} ${lastName}\nEvent: ${eventDetails.name}\nDate: ${eventDetails.date}\nLocation: ${eventDetails.location}\nPhone: ${phone}`,
+          width: 100,
+          height: 100
+      });
+  });
+
   win.print();
 }
 
