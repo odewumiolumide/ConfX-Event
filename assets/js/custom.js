@@ -328,7 +328,7 @@ function generateInvoice() {
       <div style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9;">
           <div style="max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
               <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2c3e50; padding-bottom: 20px;">
-                   <img src="/assets/images/favicon/favicon-96x96.png" alt="" >
+                  <img src="/assets/images/favicon/favicon-96x96.png" alt="" >
                   <div style="text-align: right;">
                       <h1>Conf-X-Event</h1>
                       <p>121 King Street Melbourne, 3000, Australia</p>
@@ -366,6 +366,10 @@ function generateInvoice() {
                       <tr>
                           <td style="border: 1px solid #ccc; padding: 10px;">Location</td>
                           <td style="border: 1px solid #ccc; padding: 10px;">${eventDetails.location}</td>
+                      </tr>
+                      <tr>
+                          <td style="border: 1px solid #ccc; padding: 10px;">Quantity</td>
+                          <td style="border: 1px solid #ccc; padding: 10px;">${eventDetails.quantity}</td>
                       </tr>
                       <tr>
                           <td style="border: 1px solid #ccc; padding: 10px;">Payment Status</td>
