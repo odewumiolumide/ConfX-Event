@@ -120,11 +120,11 @@ function populateCheckout() {
   const productList = document.getElementById('product-list');
   productList.innerHTML = '';
 
-  // Store event details
-  let eventName = 'Marketing Strategies';
-  let eventDate = 'June 12, 2025, 9:00 AM - 6:00 PM';
-  let eventLocation = 'Innovation Hub, Nairobi, Kenya';
-  let eventQuantity = '2';
+   // Store event details
+   let eventName = '';
+   let eventDate = '';
+   let eventLocation = '';
+   let eventQuantity = '';
 
   // Populate the product list and calculate subtotal
   cartItems.forEach(item => {
@@ -136,19 +136,19 @@ function populateCheckout() {
 
       // Fetch event details from the cart
       if (!eventName) {
-          eventName = item.title; // Ensure this property exists in your items
-          eventDate = item.eventDate; // Ensure this property exists in your items
-          eventLocation = item.eventLocation; // Ensure this property exists in your items
-          eventQuantity = item.quantity;
-      }
-  });
+        eventName = item.title; 
+        eventDate = item.eventDate; // Correctly access the event date
+        eventLocation = item.eventLocation; // Correctly access the event location
+        eventQuantity = item.quantity;
+    }
+});
 
   // Update the subtotal display
   document.getElementById('subtotal').innerText = `${subtotal.toFixed(2)} $`;
 
   // Calculate total price based on subtotal
   let totalPrice;
-  const shippingCost = 9.00; // Flat rate shipping
+  const shippingCost = 1.00; // Flat rate shipping
   if (subtotal > 1.00) {
       totalPrice = subtotal + shippingCost; // Adding flat rate shipping for paid events
   } else {
@@ -161,13 +161,13 @@ function populateCheckout() {
   // Enable/disable payment methods based on total price
   updatePaymentMethods(totalPrice);
 
-  // Store event details in a global variable for use later
-  window.eventDetails = {
-      name: eventName,
-      date: eventDate,
-      location: eventLocation,
-      quantity: eventQuantity
-  };
+   // Store event details for printing
+   window.eventDetails = {
+    name: eventName,
+    date: eventDate,
+    location: eventLocation,
+    quantity: eventQuantity
+};
 
   // Check if the cart is empty and disable/enable billing form
   checkCartAndToggleBillingForm(cartItems.length > 0);
@@ -231,9 +231,13 @@ checkoutButton.addEventListener('click', function() {
   // Capture user details
   const firstName = document.getElementById('firstName').value;
   const lastName = document.getElementById('lastName').value;
+  const phone = document.getElementById('phone').value;
 
   // Display data in the modal
   document.getElementById('userId').innerText = 'USR-' + Math.floor(Math.random() * 1000000);
+  document.getElementById('userFirstName').innerText = firstName;
+  document.getElementById('userLastName').innerText = lastName;
+  document.getElementById('userPhone').innerText = phone;
 
   // Display event details in the modal
   document.getElementById('eventName').innerText = window.eventDetails.name;
@@ -309,13 +313,92 @@ document.getElementById('closeModal').onclick = function() {
 // Initialize the page
 document.addEventListener('DOMContentLoaded', populateCheckout);
 
-    
+function generateInvoice() {
+  // Fetch values from the modal
+  const firstName = document.getElementById('userFirstName').innerText; // Use innerText
+  const lastName = document.getElementById('userLastName').innerText; // Use innerText
+  const phone = document.getElementById('userPhone').innerText; // Use innerText
+  const eventDetails = window.eventDetails; // Assuming this object exists
+  const ticketNumber = document.getElementById('userId').innerText; // Get the ticket number generated in the modal
+  const paymentStatus = "Success"; // Set payment status
+  const eventType = "Free Pass"; // Adjust according to your logic
+  const totalCost = "0.00"; // Replace with actual total cost logic
 
+  const invoiceHTML = `
+      <div style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9;">
+          <div style="max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2c3e50; padding-bottom: 20px;">
+                   <img src="/assets/images/favicon/favicon-96x96.png" alt="" >
+                  <div style="text-align: right;">
+                      <h1>Conf-X-Event</h1>
+                      <p>121 King Street Melbourne, 3000, Australia</p>
+                      <p>www.conf-x-event.vercal.app</p>
+                  </div>
+              </div>
+              <div style="margin: 20px 0;">
+                  <h2 style="font-size: 20px; color: #333; margin: 0;">TICKET</h2>
+                  <p><strong>Ticket Date:</strong> ${new Date().toLocaleDateString()}</p>
+                  <p><strong>Ticket Number:</strong> ${ticketNumber}</p>
+              </div>
+              <div style="margin-top: 20px;">
+                  <h3>Event Details</h3>
+                  <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                      <tr>
+                          <th style="border: 1px solid #ccc; padding: 10px; text-align: left;">Detail</th>
+                          <th style="border: 1px solid #ccc; padding: 10px; text-align: left;">Information</th>
+                      </tr>
+                      <tr>
+                          <td style="border: 1px solid #ccc; padding: 10px;">Attendee</td>
+                          <td style="border: 1px solid #ccc; padding: 10px;">${firstName} ${lastName}</td>
+                      </tr>
+                      <tr>
+                          <td style="border: 1px solid #ccc; padding: 10px;">Phone</td>
+                          <td style="border: 1px solid #ccc; padding: 10px;">${phone}</td>
+                      </tr>
+                      <tr>
+                          <td style="border: 1px solid #ccc; padding: 10px;">Event</td>
+                          <td style="border: 1px solid #ccc; padding: 10px;">${eventDetails.name}</td>
+                      </tr>
+                      <tr>
+                          <td style="border: 1px solid #ccc; padding: 10px;">Date</td>
+                          <td style="border: 1px solid #ccc; padding: 10px;">${eventDetails.date}</td>
+                      </tr>
+                      <tr>
+                          <td style="border: 1px solid #ccc; padding: 10px;">Location</td>
+                          <td style="border: 1px solid #ccc; padding: 10px;">${eventDetails.location}</td>
+                      </tr>
+                      <tr>
+                          <td style="border: 1px solid #ccc; padding: 10px;">Payment Status</td>
+                          <td style="border: 1px solid #ccc; padding: 10px;">${paymentStatus}</td>
+                      </tr>
+                      <tr>
+                          <td style="border: 1px solid #ccc; padding: 10px;">Type</td>
+                          <td style="border: 1px solid #ccc; padding: 10px;">${eventType}</td>
+                      </tr>
+                      <tr>
+                          <td style="border: 1px solid #ccc; padding: 10px; font-weight: bold;">Total Cost</td>
+                          <td style="border: 1px solid #ccc; padding: 10px; font-weight: bold;">$${totalCost}</td>
+                      </tr>
+                  </table>
+              </div>
+              <div style="margin-top: 20px; text-align: center; font-size: 12px;">
+                  <p>Thank you for registering!</p>
+              </div>
+              <div style="margin-top: 20px; font-size: 12px;">
+                  <p>Terms: Please keep this email for your records.</p>
+              </div>
+          </div>
+      </div>
+  `;
 
+  // Open a new window to print the invoice
+  const win = window.open('', '', 'height=800,width=800');
+  win.document.write(invoiceHTML);
+  win.document.close();
+  win.print();
+}
 
-    
-    
-
-
-// Event Copy URL Code
-
+// Event listener for the print button
+document.getElementById('print-button').onclick = function() {
+  generateInvoice();
+};

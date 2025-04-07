@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <title>Payment</title>
+</head>
+<body>
+    
+    <button id="checkout">Checkout</button>
+
+    <script>
+        var stripe = Stripe("pk_test_51QcUERBiTeEdaPhKqg9r31niJNybm72YiMtdV24I66AmSpdJLFZEUzMvyv9COcpEDFrUCbMlkCCtwPVLPeoz4WnH00neBUGh7H");
+
+        document.getElementById("checkout").addEventListener("click", function() {
+            stripe.redirectToCheckout({
+                lineItems: [
+                    {
+                        price: "price_1R9xrvBiTeEdaPhKBP68lOqE",
+                        quantity: 1,
+                    },
+                ],
+                mode: "subscription",
+                successUrl: "https://www.google.com/",  // Corrected URL
+                cancelUrl: "https://www.twitter.com/",
+            })
+            .then(function(result) {
+                if (result.error) {
+                    alert(result.error.message);  // Display any error messages
+                }
+            });  // Added missing closing parenthesis
+        });  
+    </script>
+</body>
+</html>

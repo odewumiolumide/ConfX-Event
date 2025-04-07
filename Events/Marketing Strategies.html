@@ -23,7 +23,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../ms-icon-144x144.html">
     <meta name="theme-color" content="#ffffff">
-    <title>Marketing Strategies</title>
+    <title>MARKETING STRATEGIES</title>
     <link rel="stylesheet" href="/../../use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="/../../cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
     <link rel="stylesheet" href="/assets/bootstrap/bootstrap.min.css">
@@ -287,7 +287,7 @@
                                         </tr>
                                         <tr>
                                             <th>Date and Time</th>
-                                            <td>June 12, 2025, 9:00 AM - 6:00 PM </td>
+                                            <td id="eventDate">June 12, 2025, 9:00 AM - 6:00 PM</td>
                                         </tr>
                                         <tr>
                                             <th>Event Type</th>
@@ -299,7 +299,7 @@
                                         </tr>
                                         <tr>
                                             <th>Location</th>
-                                            <td>Innovation Hub, Nairobi, Kenya</td>
+                                            <td id="eventLocation">Innovation Hub, Nairobi, Kenya</td>
                                         </tr>
                                         <tr>
                                             <th>Key Highlights</th>
@@ -659,15 +659,21 @@ function decreaseValue(button) {
 function addToCart() {
     const title = document.querySelector('.heading h3').innerText; // Get title dynamically
     const price = parseFloat(document.getElementById("event-price").innerText);
-    const image = "assets/images/ai event.jpg"; // Replace with actual image path
+    const image = "/assets/images/ai event.jpg"; // Replace with actual image path
     const total = (price * quantity).toFixed(2);
+
+    // Fetch event details from the information table
+    const eventDate = document.getElementById('eventDate').innerText; // Get event date
+    const eventLocation = document.getElementById('eventLocation').innerText; // Get event location
 
     const cartItem = {
         title: title,
         price: price,
         quantity: quantity,
         total: total,
-        image: image
+        image: image,
+        eventDate: eventDate, // Store event date
+        eventLocation: eventLocation // Store event location
     };
 
     // Get existing cart items or create a new array
@@ -707,6 +713,7 @@ document.getElementById('okButton').onclick = function() {
 
 // Call updateCartCount on page load
 document.addEventListener('DOMContentLoaded', updateCartCount);
+
 </script>
 
 </body>

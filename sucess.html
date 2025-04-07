@@ -8,79 +8,33 @@
 <body>
     
     
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f9f9f9; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2c3e50; padding-bottom: 20px; }
-        .header img { width: 120px; }
-        .company-info { text-align: right; }
-        .title { font-size: 20px; color: #333; margin: 0; }
-        .invoice-info { margin: 20px 0; }
-        .invoice-info p { margin: 5px 0; }
-        .event-details { margin-top: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-        th { background-color: #eaeaea; }
-        .total { font-weight: bold; }
-        .footer { margin-top: 20px; text-align: center; font-size: 12px; }
-        .terms { margin-top: 20px; font-size: 12px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <img src="/assets/images/favicon/test logo.png" alt="Company Logo" />
-            <div class="company-info">
-                <h1>Your Company Name</h1>
-                <p>Your Company Address</p>
-                <p>Your Company Website</p>
-            </div>
-        </div>
-        <div class="invoice-info">
-            <h2 class="title">INVOICE</h2>
-            <p><strong>Invoice Date:</strong> ${new Date().toLocaleDateString()}</p>
-            <p><strong>Invoice Number:</strong> INV-${Math.floor(Math.random() * 100000)}</p>
-        </div>
-        <div class="event-details">
-            <h3>Event Details</h3>
-            <table>
+    <div style="font-family: Arial, sans-serif; ...">
+        <h1>Invoice</h1>
+        <p><strong>Attendee:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Invoice Number:</strong> ${invoiceNumber}</p>
+        
+        <h2>Event Details</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            ${eventDetails.map(event => `
                 <tr>
-                    <th>Detail</th>
-                    <th>Information</th>
+                    <td>${event.name}</td>
+                    <td>${event.date}</td>
+                    <td>${event.location}</td>
+                    <td>$${event.price}</td>
+                    <td>${event.quantity}</td>
                 </tr>
-                <tr>
-                    <td>Attendee</td>
-                    <td>${attendeeName}</td>
-                </tr>
-                <tr>
-                    <td>Phone</td>
-                    <td>${phone}</td>
-                </tr>
-                <tr>
-                    <td>Event</td>
-                    <td>${eventDetails.name}</td>
-                </tr>
-                <tr>
-                    <td>Date</td>
-                    <td>${eventDetails.date}</td>
-                </tr>
-                <tr>
-                    <td>Location</td>
-                    <td>${eventDetails.location}</td>
-                </tr>
-                <tr>
-                    <td class="total">Total Cost</td>
-                    <td class="total">$${totalCost}</td>
-                </tr>
-            </table>
-        </div>
-        <div class="footer">
-            <p>Thank you for registering!</p>
-        </div>
-        <div class="terms">
-            <p>Terms: Please keep this email for your records.</p>
-        </div>
+            `).join('')}
+        </table>
+        
+        <h3>Total Cost: $${totalCost}</h3>
     </div>
-      
 </body>
 </html>

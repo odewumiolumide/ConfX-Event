@@ -415,9 +415,11 @@
                 <label class="form-label fw-semibold text-primary-light text-sm mb-8">Event Type:</label>
                 <select class="form-control radius-8 form-select" id="eventType" required>
                     <option selected disabled>Event Type</option>
-                    <option value="In-Person">In-Person</option>
-                    <option value="Virtual">Virtual</option>
-                    <option value="Hybrid">Hybrid</option>
+                    <option value="Conferences">Conferences</option>
+                    <option value="Seminars">Seminars</option>
+                    <option value="Networking">Networking</option>
+                    <option value="Webinars">Webinars</option>
+                    <option value="Festivals">Festivals</option>
                 </select>
             </div>
             <div class="col-12 mb-20">
@@ -813,12 +815,16 @@ function showFeedbackModal(message) {
 // Get color class based on event type
 function getColorClass(eventType) {
     switch (eventType) {
-        case 'In-Person':
-            return 'bg-success-600'; // Green for In-Person
-        case 'Virtual':
-            return 'bg-primary-600'; // Blue for Virtual
-        case 'Hybrid':
-            return 'bg-warning-600'; // Yellow for Hybrid
+        case 'Conferences':
+            return 'bg-success-600'; // Green for Conferences
+        case 'Seminars':
+            return 'bg-primary-600'; // Blue for Seminars
+        case 'Networking':
+            return 'bg-warning-600'; // Yellow for Networking
+        case 'Webinars':
+            return 'bg-cyan'; // Yellow for Webinars 
+        case 'Festivals':
+            return 'bg-light-800'; // Black for Festivals   
         default:
             return 'bg-secondary-600'; // Default color
     }
