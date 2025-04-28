@@ -47,10 +47,10 @@
         <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
     </button>
     <div>
-        <a href="dashboard/index.html" class="sidebar-logo">
-            <img src="/assets/images/ConfX.png"  alt="site logo" class="light-logo">
-            <img src="/assets/images/index3-header-logo.png" alt="site logo" class="dark-logo">
-            <img src="/assets/images/index3-header-logo.png" alt="site logo" class="logo-icon">
+        <a href="dashboard/index5.html" class="sidebar-logo">
+            <img src="/Dashboard/assets/images/Logo Test B.png"  alt="site logo" class="light-logo">
+            <img src="/Dashboard/assets/images/Logo Test W.png" alt="site logo" class="dark-logo">
+            <img src="/Dashboard/assets/images/Logo Test B.png" alt="site logo" class="logo-icon">
         </a>
     </div>
     <div class="sidebar-menu-area">
@@ -66,7 +66,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="sidebar-menu-group-title">Application</li>
+            <li class="sidebar-menu-group-title">Event Creation</li>
             
             <li>
                 <a href="/Dashboard/componentspage/create-event.html">
@@ -82,17 +82,15 @@
             </li>
             
 
-            <li class="sidebar-menu-group-title">UI Elements</li>
+            <li class="sidebar-menu-group-title">Users Settings</li>
         
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
-                    <span>Users</span>
+                    <span>Settings</span>
                 </a>
                 <ul class="sidebar-submenu">
-                    <li>
-                        <a href="/Dashboard/users/users-list.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Users List</a>
-                    </li>
+                   
                     <li>
                         <a href="/Dashboard/users/users-grid.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Users Grid</a>
                     </li>
@@ -277,6 +275,7 @@
                 </div><!-- Language dropdown end -->
 
         
+                <!---- Notification Page -->
                 <div class="dropdown">
                     <button class="has-indicator w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center" type="button" data-bs-toggle="dropdown">
                         <iconify-icon icon="iconoir:bell" class="text-primary-light text-xl"></iconify-icon>
@@ -360,116 +359,108 @@
 
             
     <div class="row gy-4">
-        <!-- Dashboard Widget Start -->
-        <div class="col-xxl-3 col-sm-6">
-            <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-3">
-                <div class="card-body p-0">
-                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-                        <div class="d-flex align-items-center">
-
-                            <div class="w-64-px h-64-px radius-16 bg-base-50 d-flex justify-content-center align-items-center me-20">
-                                <span class="mb-0 w-40-px h-40-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center radius-8 h6 mb-0">
-                                    <iconify-icon icon="gridicons:multiple-users" class="text-base text-2xl mb-0"></iconify-icon>
-                                </span>
-                            </div>
-
-                            <div>
-                                <span class="mb-2 fw-medium text-secondary-light text-md">New Users</span>
-                                <h6 class="fw-semibold my-1">0<h6>
-                                <p class="text-sm mb-0">Increase by
-                                    <span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm">0</span> this week
-                                </p>
-                            </div>
+        
+        <!-- Dashboard Widget Start (Total Users) -->
+    <div class="col-xxl-3 col-sm-6">
+        <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-3">
+            <div class="card-body p-0">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                    <div class="d-flex align-items-center">
+                        <div class="w-64-px h-64-px radius-16 bg-base-50 d-flex justify-content-center align-items-center me-20">
+                            <span class="mb-0 w-40-px h-40-px bg-primary-600 flex-shrink-0 text-white d-flex justify-content-center align-items-center radius-8 h6 mb-0">
+                                <iconify-icon icon="gridicons:multiple-users" class="text-base text-2xl mb-0"></iconify-icon>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="mb-2 fw-medium text-secondary-light text-md">Total Number of Users</span>
+                            <h6 class="fw-semibold my-1 total-users">0</h6> <!-- Class for JS -->
+                            <p class="text-sm mb-0">Increase by
+                                <span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm user-increase">0</span> this week
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Dashboard Widget End -->
+    </div>
+    <!-- Dashboard Widget End -->
 
-        <!-- Dashboard Widget Start -->
-        <div class="col-xxl-3 col-sm-6">
-            <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-2">
-                <div class="card-body p-0">
-                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-                        <div class="d-flex align-items-center">
-
-                            <div class="w-64-px h-64-px radius-16 bg-base-50 d-flex justify-content-center align-items-center me-20">
-                                <span class="mb-0 w-40-px h-40-px bg-purple flex-shrink-0 text-white d-flex justify-content-center align-items-center radius-8 h6 mb-0">
-                                    <iconify-icon icon="solar:wallet-bold" class="text-white text-2xl mb-0"></iconify-icon>
-                                </span>
-                            </div>
-
-                            <div>
-                                <span class="mb-2 fw-medium text-secondary-light text-md">Total Deposit</span>
-                                <h6 class="fw-semibold my-1">0</h6>
-                                <p class="text-sm mb-0">Increase by
-                                    <span class="bg-danger-focus px-1 rounded-2 fw-medium text-danger-main text-sm">0</span> this week
-                                </p>
-                            </div>
+        <!-- Dashboard Widget Start (Total Events) -->
+    <div class="col-xxl-3 col-sm-6">
+        <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-2">
+            <div class="card-body p-0">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                    <div class="d-flex align-items-center">
+                        <div class="w-64-px h-64-px radius-16 bg-base-50 d-flex justify-content-center align-items-center me-20">
+                            <span class="mb-0 w-40-px h-40-px bg-purple flex-shrink-0 text-white d-flex justify-content-center align-items-center radius-8 h6 mb-0">
+                                <iconify-icon icon="solar:wallet-bold" class="text-white text-2xl mb-0"></iconify-icon>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="mb-2 fw-medium text-secondary-light text-md">Total Number of Events</span>
+                            <h6 class="fw-semibold my-1 total-events">0</h6> <!-- Class for JS -->
+                            <p class="text-sm mb-0">Increase by
+                                <span class="bg-danger-focus px-1 rounded-2 fw-medium text-danger-main text-sm event-increase">0</span> this week
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Dashboard Widget End -->
+    </div>
+    <!-- Dashboard Widget End -->
 
-        <!-- Dashboard Widget Start -->
-        <div class="col-xxl-3 col-sm-6">
-            <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-5">
-                <div class="card-body p-0">
-                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-                        <div class="d-flex align-items-center">
-
-                            <div class="w-64-px h-64-px radius-16 bg-base-50 d-flex justify-content-center align-items-center me-20">
-                                <span class="mb-0 w-40-px h-40-px bg-red flex-shrink-0 text-white d-flex justify-content-center align-items-center radius-8 h6 mb-0">
-                                    <iconify-icon icon="fa6-solid:file-invoice-dollar" class="text-white text-2xl mb-0"></iconify-icon>
-                                </span>
-                            </div>
-
-                            <div>
-                                <span class="mb-2 fw-medium text-secondary-light text-md">Total Expense</span>
-                                <h6 class="fw-semibold my-1">0</h6>
-                                <p class="text-sm mb-0">Increase by
-                                    <span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm">0</span> this week
-                                </p>
-                            </div>
+        <!-- Dashboard Widget Start (Total Expense) -->
+    <div class="col-xxl-3 col-sm-6">
+        <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-5">
+            <div class="card-body p-0">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                    <div class="d-flex align-items-center">
+                        <div class="w-64-px h-64-px radius-16 bg-base-50 d-flex justify-content-center align-items-center me-20">
+                            <span class="mb-0 w-40-px h-40-px bg-red flex-shrink-0 text-white d-flex justify-content-center align-items-center radius-8 h6 mb-0">
+                                <iconify-icon icon="fa6-solid:file-invoice-dollar" class="text-white text-2xl mb-0"></iconify-icon>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="mb-2 fw-medium text-secondary-light text-md">Total Expense</span>
+                            <h6 class="fw-semibold my-1 total-expenses">0.00</h6> <!-- Class for JS -->
+                            <p class="text-sm mb-0">Increase by
+                                <span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm expense-increase">0</span> this week
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Dashboard Widget End -->
+    </div>
+    <!-- Dashboard Widget End -->
 
-        <!-- Dashboard Widget Start -->
-        <div class="col-xxl-3 col-sm-6">
-            <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-4">
-                <div class="card-body p-0">
-                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
-                        <div class="d-flex align-items-center">
-
-                            <div class="w-64-px h-64-px radius-16 bg-base-50 d-flex justify-content-center align-items-center me-20">
-                                <span class="mb-0 w-40-px h-40-px bg-success-main flex-shrink-0 text-white d-flex justify-content-center align-items-center radius-8 h6 mb-0">
-                                    <iconify-icon icon="streamline:bag-dollar-solid" class="text-base text-2xl mb-0"></iconify-icon>
-                                    
-                                </span>
-                            </div>
-
-                            <div>
-                                <span class="mb-2 fw-medium text-secondary-light text-md">Total Earning</span>
-                                <h6 class="fw-semibold my-1">0</h6>
-                                <p class="text-sm mb-0">Increase by
-                                    <span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm">0</span> this week
-                                </p>
-                            </div>
+        <!-- Dashboard Widget Start (Total Earnings) -->
+    <div class="col-xxl-3 col-sm-6">
+        <div class="card px-24 py-16 shadow-none radius-8 border h-100 bg-gradient-start-4">
+            <div class="card-body p-0">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                    <div class="d-flex align-items-center">
+                        <div class="w-64-px h-64-px radius-16 bg-base-50 d-flex justify-content-center align-items-center me-20">
+                            <span class="mb-0 w-40-px h-40-px bg-success-main flex-shrink-0 text-white d-flex justify-content-center align-items-center radius-8 h6 mb-0">
+                                <iconify-icon icon="streamline:bag-dollar-solid" class="text-base text-2xl mb-0"></iconify-icon>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="mb-2 fw-medium text-secondary-light text-md">Total Earning</span>
+                            <h6 class="fw-semibold my-1 total-earnings">0.00</h6> <!-- Class for JS -->
+                            <p class="text-sm mb-0">Increase by
+                                <span class="bg-success-focus px-1 rounded-2 fw-medium text-success-main text-sm earning-increase">0</span> this week
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Dashboard Widget End -->
+    </div>
+    <!-- Dashboard Widget End -->
 
-        <!-- Revenue Statistics Start -->
+        <!-- Revenue Statistics Start
         <div class="col-xxl-8">
             <div class="card h-100 radius-8 border-0">
                 <div class="card-body p-24">
@@ -509,13 +500,13 @@
 
                 </div>
             </div>
-        </div>
+        </div>  -->
         <!-- Revenue Statistics End -->
 
         
 
 
-        <!-- My portfolio Start -->
+        <!-- My portfolio Start 
         <div class="col-xxl-3">
             <div class="card h-100 radius-8 border-0">
                 <div class="card-body p-24">
@@ -544,147 +535,42 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- My portfolio End -->
 
-        <!-- Latest Investments Start -->
-        <div class="col-xxl-6">
-            <div class="card h-100">
-                <div class="card-body p-24">
-                    <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between mb-20">
-                        <h6 class="mb-2 fw-bold text-lg mb-0">Latest Registered Events</h6>
-                        <a href="javascript:void(0)" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
-                            View All
-                            <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
-                        </a>
-                    </div>
-                    <div class="table-responsive scroll-sm">
-                        <table class="table bordered-table sm-table mb-0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Events</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Price </th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col" class="text-center">Total Orders</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">AI EVENT UK</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">Main Asset</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h6 class="text-md mb-0 fw-normal">7500</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Ounces</span>
-                                    </td>
-                                    <td>$7,500.00</td>
-                                    <td>25 May 2024</td>
-                                    <td class="text-center">
-                                        <span class="bg-success-focus text-success-main px-16 py-4 radius-8 fw-medium text-sm">Completed</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="../assets/images/asset/asset-img2.png" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px radius-8 me-12">
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">Dollars</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">Currency</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h6 class="text-md mb-0 fw-normal">5,40,000</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Dollars</span>
-                                    </td>
-                                    <td>$5,40,000.00</td>
-                                    <td>25 May 2024</td>
-                                    <td class="text-center">
-                                        <span class="bg-warning-focus text-warning-main px-16 py-4 radius-8 fw-medium text-sm">In Progress</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="../assets/images/asset/asset-img3.png" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px radius-8 me-12">
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">Stock Market</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">Product</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h6 class="text-md mb-0 fw-normal">1500</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Products</span>
-                                    </td>
-                                    <td>$50,000.00</td>
-                                    <td>25 May 2024</td>
-                                    <td class="text-center">
-                                        <span class="bg-success-focus text-success-main px-16 py-4 radius-8 fw-medium text-sm">Completed</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="../assets/images/asset/asset-img4.png" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px radius-8 me-12">
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">Dimond</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">Asset</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h6 class="text-md mb-0 fw-normal">350</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Ounces</span>
-                                    </td>
-                                    <td>$30,000.00</td>
-                                    <td>25 May 2024</td>
-                                    <td class="text-center">
-                                        <span class="bg-warning-focus text-warning-main px-16 py-4 radius-8 fw-medium text-sm">In Progress</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="../assets/images/asset/asset-img5.png" alt="" class="flex-shrink-0 me-12 w-40-px h-40-px radius-8 me-12">
-                                            <div class="flex-grow-1">
-                                                <h6 class="text-md mb-0 fw-normal">S&P 500</h6>
-                                                <span class="text-sm text-secondary-light fw-normal">Index</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h6 class="text-md mb-0 fw-normal">24,000</h6>
-                                        <span class="text-sm text-secondary-light fw-normal">Shares</span>
-                                    </td>
-                                    <td>$63,000.00</td>
-                                    <td>25 May 2024</td>
-                                    <td class="text-center">
-                                        <span class="bg-success-focus text-success-main px-16 py-4 radius-8 fw-medium text-sm">Completed</span>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        <!-- Latest Event Start -->
+<div class="col-xxl-6">
+    <div class="card h-100">
+        <div class="card-body p-24">
+            <div class="d-flex align-items-center flex-wrap gap-2 justify-content-between mb-20">
+                <h6 class="mb-2 fw-bold text-lg mb-0">Latest Registered Events</h6>
+                <a href="/Dashboard/view-event.html" class="text-primary-600 hover-text-primary d-flex align-items-center gap-1">
+                    View All
+                    <iconify-icon icon="solar:alt-arrow-right-linear" class="icon"></iconify-icon>
+                </a>
+            </div>
+            <div class="table-responsive scroll-sm">
+                <table class="table bordered-table sm-table mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Events</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Date</th>
+                            <th scope="col" class="text-center">Order Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic content will be injected here by JavaScript -->
+                    </tbody>
+                </table>
             </div>
         </div>
-        <!-- Latest Investments End -->
+    </div>
+</div>
+<!-- Latest Investments End -->
 
-        <!-- Notice board Start -->
+        <!-- Notice board Start 
         <div class="col-xxl-4">
             <div class="card h-100">
                 <div class="card-body p-24">
@@ -917,6 +803,110 @@
     <!-- main js -->
     <script src="../assets/js/app.js"></script>
     <script src="https://laravel.wowdash.wowtheme7.com/assets/js/homeFiveChart.js"></script>
+
+    <script>
+        // Function to fetch events from local storage and display them in the Latest Registered Events table
+function fetchEventsForTable() {
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+    const eventsTableBody = document.querySelector('.table tbody'); // Select the tbody of the table
+    eventsTableBody.innerHTML = ''; // Clear previous entries
+
+    events.forEach(event => {
+        const startDate = new Date(event.startDate);
+        const formattedStartDate = startDate.toLocaleDateString(); // Format the date
+        const isCompleted = shouldCompleteEvent(startDate);
+        const statusClass = isCompleted ? 'bg-success-focus text-success-main' : 'bg-warning-focus text-warning-main';
+        const statusText = isCompleted ? 'Completed' : 'In Progress'; // Determine status text
+
+        const eventRow = document.createElement('tr');
+        eventRow.innerHTML = `
+            <td>
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1">
+                        <h6 class="text-md mb-0 fw-normal">${event.title}</h6>
+                        <span class="text-sm text-secondary-light fw-normal">${event.type}</span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <h6 class="text-md mb-0 fw-normal">${event.quantity}</h6>
+                <span class="text-sm text-secondary-light fw-normal">${event.pricingCurrency}</span>
+            </td>
+            <td>${event.price}</td>
+            <td>${formattedStartDate}</td>
+            <td class="text-center">
+                <span class="${statusClass} px-16 py-4 radius-8 fw-medium text-sm">${statusText}</span>
+            </td>
+        `;
+        eventsTableBody.appendChild(eventRow); // Append the row to the table
+    });
+}
+
+// Function to check if an event should be marked as completed
+function shouldCompleteEvent(startDate) {
+    const currentTime = new Date();
+    return startDate < currentTime; // Mark as completed if the start date is in the past
+}
+
+// Call this function to populate the table when the page loads
+document.addEventListener('DOMContentLoaded', fetchEventsForTable);
+    </script>
+
+<script>
+    // Function to update dashboard widgets
+    function updateDashboardWidgets() {
+        const events = JSON.parse(localStorage.getItem('events')) || [];
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const totalExpenses = parseFloat(localStorage.getItem('totalExpenses')) || 0;
+        const totalEarnings = calculateTotalEarnings(events); // Calculate total earnings based on events
+
+        // Update total number of users
+        const totalUsers = users.length || 1; // Default to 1 if no users
+        document.querySelector('.total-users').innerText = totalUsers;
+
+        // Update total number of events
+        const totalEvents = events.length;
+        document.querySelector('.total-events').innerText = totalEvents;
+
+        // Update total expenses
+        document.querySelector('.total-expenses').innerText = totalExpenses.toFixed(2);
+
+        // Update total earnings
+        document.querySelector('.total-earnings').innerText = totalEarnings.toFixed(2);
+
+        // Calculate increases
+        const previousUserCount = parseInt(localStorage.getItem('previousUserCount')) || 0;
+        const previousEventCount = parseInt(localStorage.getItem('previousEventCount')) || 0;
+        const previousExpenseCount = parseFloat(localStorage.getItem('previousExpenses')) || 0;
+        const previousEarningsCount = parseFloat(localStorage.getItem('previousEarnings')) || 0;
+
+        const userIncrease = totalUsers - previousUserCount;
+        const eventIncrease = totalEvents - previousEventCount;
+        const expenseIncrease = totalExpenses - previousExpenseCount;
+        const earningIncrease = totalEarnings - previousEarningsCount;
+
+        document.querySelector('.user-increase').innerText = userIncrease;
+        document.querySelector('.event-increase').innerText = eventIncrease;
+        document.querySelector('.expense-increase').innerText = expenseIncrease.toFixed(2);
+        document.querySelector('.earning-increase').innerText = earningIncrease.toFixed(2);
+
+        // Store current counts for future reference
+        localStorage.setItem('previousUserCount', totalUsers);
+        localStorage.setItem('previousEventCount', totalEvents);
+        localStorage.setItem('previousExpenses', totalExpenses);
+        localStorage.setItem('previousEarnings', totalEarnings);
+    }
+
+    // Function to calculate total earnings from events
+    function calculateTotalEarnings(events) {
+        return events.reduce((total, event) => {
+            return total + (event.price * event.quantity);
+        }, 0);
+    }
+
+    // Call the function to update the dashboard on page load
+    document.addEventListener('DOMContentLoaded', updateDashboardWidgets);
+</script>
     
 
 </body>

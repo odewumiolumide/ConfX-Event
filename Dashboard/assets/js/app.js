@@ -238,21 +238,3 @@ const translations = {
   }
 };
 
-document.querySelectorAll('input[name="crypto"]').forEach(input => {
-  input.addEventListener('change', function() {
-      const selectedLanguage = this.id;
-      const lang = selectedLanguage === 'english' ? 'english' : selectedLanguage;
-
-      // Update the content based on the selected language
-      document.querySelector('.dashboard-title').textContent = translations[lang].dashboard;
-      document.querySelector('.choose-language-title').textContent = translations[lang].chooseLanguage;
-      document.querySelector('.notifications-title').textContent = translations[lang].notifications;
-      document.querySelector('.user-name').textContent = translations[lang].userName;
-      document.querySelector('.see-all-notifications').textContent = translations[lang].seeAllNotifications;
-      document.querySelector('.my-profile').textContent = translations[lang].myProfile;
-      document.querySelector('.inbox').textContent = translations[lang].inbox;
-      document.querySelector('.settings').textContent = translations[lang].settings;
-      document.querySelector('.log-out').textContent = translations[lang].logOut;
-  });
-});
-    

@@ -120,11 +120,11 @@ function populateCheckout() {
   const productList = document.getElementById('product-list');
   productList.innerHTML = '';
 
-   // Store event details
-   let eventName = '';
-   let eventDate = '';
-   let eventLocation = '';
-   let eventQuantity = '';
+  // Store event details
+  let eventName = '';
+  let eventDate = '';
+  let eventLocation = '';
+  let eventQuantity = '';
 
   // Populate the product list and calculate subtotal
   cartItems.forEach(item => {
@@ -136,12 +136,12 @@ function populateCheckout() {
 
       // Fetch event details from the cart
       if (!eventName) {
-        eventName = item.title; 
-        eventDate = item.eventDate; // Correctly access the event date
-        eventLocation = item.eventLocation; // Correctly access the event location
-        eventQuantity = item.quantity;
-    }
-});
+          eventName = item.title; 
+          eventDate = item.eventDate; // Correctly access the event date
+          eventLocation = item.eventLocation; // Correctly access the event location
+          eventQuantity = item.quantity;
+      }
+  });
 
   // Update the subtotal display
   document.getElementById('subtotal').innerText = `${subtotal.toFixed(2)} $`;
@@ -161,13 +161,13 @@ function populateCheckout() {
   // Enable/disable payment methods based on total price
   updatePaymentMethods(totalPrice);
 
-   // Store event details for printing
-   window.eventDetails = {
-    name: eventName,
-    date: eventDate,
-    location: eventLocation,
-    quantity: eventQuantity
-};
+  // Store event details for printing
+  window.eventDetails = {
+      name: eventName,
+      date: eventDate,
+      location: eventLocation,
+      quantity: eventQuantity
+  };
 
   // Check if the cart is empty and disable/enable billing form
   checkCartAndToggleBillingForm(cartItems.length > 0);
@@ -228,6 +228,15 @@ document.getElementById('paymentMethod1').addEventListener('change', checkFormCo
 document.getElementById('paymentMethod2').addEventListener('change', checkFormCompletion);
 
 checkoutButton.addEventListener('click', function() {
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Check if more than one event is selected
+  if (cartItems.length > 1) {
+      // Show the registration error modal
+      document.getElementById('registrationModal').style.display = 'block';
+      return; // Stop execution
+  }
+
   // Capture user details
   const firstName = document.getElementById('firstName').value;
   const lastName = document.getElementById('lastName').value;
@@ -310,6 +319,11 @@ document.getElementById('closeModal').onclick = function() {
   document.getElementById('confirmationModal').style.display = 'none';
 };
 
+// Redirect on OK button in registration error modal
+document.getElementById('cartbutton').onclick = function() {
+  // Redirect to the cart page
+  window.location.href = '/cart.html'; // Adjust the path as needed for your project
+};
 // Initialize the page
 document.addEventListener('DOMContentLoaded', populateCheckout);
 
@@ -386,7 +400,7 @@ function generateInvoice() {
                   <div id="qrcode" style="margin-top: 20px;"></div>
               </div>
               <div style="margin-top: 20px; text-align: center; font-size: 12px;">
-                  <p>Thank you for registering! Terms: Please keep this email for your records.</p>
+                  <p>Thank you for registering! Terms: Please keep this ticket for your records.</p>
               </div>
           </div>
       </div>
